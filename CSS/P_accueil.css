@@ -1,0 +1,137 @@
+body{
+    margin: 0 auto;
+    background: url(../image/background.png);
+    background-size: cover; 
+    display: flex;
+    flex-direction: column;
+}
+/* haut de page  */
+
+header{
+    /* background: rgb(174, 162, 162); */
+    background: url(../image/back-ecriture.png);  
+}
+
+nav{
+    align-items: center; 
+    margin-left: 3%;
+    display: inline-flex;
+    justify-content: space-between;
+    width: 90%;
+    height: 97px;
+    
+}
+
+.acc-menu a {
+   
+    justify-content: space-between;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    align-items: center;
+    padding: 32px;
+
+}
+nav img{
+    display: inline-flex;
+    width: 80px;
+    height: 10vh;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.acc-menu a:hover{
+    background: rgb(237, 238, 241);
+    color: black;
+}
+nav button{
+    padding: 8px;
+    border-radius: 10px;
+    
+}
+nav button a {
+    text-decoration: none;
+}
+.connexion{
+    display: none;
+}
+.toggle{
+    display:none;
+}
+.connect{
+    display:none;
+}
+
+/* contenu */
+.contenu{
+    flex:1 0 auto;
+    min-height: 100%;
+    position: relative;
+    margin:3%
+}
+.landing-page{
+    display: inline-flex;
+}
+.big-title{
+    display: flex;
+    align-items: center;
+    margin-right: 5%;
+    text-align: center;
+}
+.accueil-text{
+    display: flex;
+    font-size: 21px;
+    text-align: justify;
+}
+/* .slider{
+    width: 600px;
+    overflow: hidden;
+    margin:150px auto;
+}
+.slides{
+    width: calc(18050PX);
+    animation:glisse 10s infinite;
+}
+.slide{
+    float: left;
+    height: 400px;
+}
+
+@keyframes glisse {
+    0% {
+        transform: translateX(0);
+    }
+    33% {
+        transform: translateX(-600px);
+    }
+    66% {
+        transform: translateX(-1200px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+} */
+/* bas de page */
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    flex-shrink: 0;
+    width: 100%;
+    height: 40px;
+    position:absolute;
+    bottom: 0px;
+    left: 0px;
+    background: url(../image/back-ecriture.png);
+    
+}
+footer a{
+    display: inline-flex;
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    align-items: center;
+    padding-right: 20px;
+    padding-left: 20px;
+}

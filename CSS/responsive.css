@@ -1,0 +1,130 @@
+
+@media screen and (max-width:1023px){
+    .toggle{
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+        margin-right: 3%;
+    }
+    .toggle .fermer{
+        display: none; 
+    
+    }
+    .toggle .ouvrir{
+        display: block;
+    }
+  
+    .open .ouvrir{
+        display: none;
+    }
+    .open .fermer{
+        display: block;
+        color: white;
+    }
+    .open footer{
+        display: none;
+    }
+    
+    .acc-menu {
+        display: flex;
+        list-style: none;
+        position: absolute;
+        top: 0px;
+        right: 0;
+        width:  94%;
+        height: 720px;
+        background: #000;
+        margin-top: 97px;
+        flex-direction: column;
+        padding: 2rem;
+        justify-content: space-around;
+        transform: translateX(-100%);
+        transition: transform 1s;
+    }
+    .acc-menu a{
+        font-size: 35px; 
+    }
+    .connect {
+        display: flex;
+    }
+  
+    .open .acc-menu {
+        transform: translateX(0);
+    }
+    .open .accueil-text{
+        display: none;
+        transition: 1s;
+    }
+    .open .big-title{
+        display: none;
+        transition: 3s;
+    }
+    nav button{
+        display: none;
+    }
+    /* Page connexion */
+    .open .S_connecter{
+        display: none;
+        transition: 1s;
+    }
+
+    /* nous contacter */
+    .open .form-page{
+        display: none;
+    }
+}
+
+@media screen and (max-width:720px) {
+    .landing-page{
+        display: flex;
+        flex-direction: column;
+        margin: 6%;
+    }
+    .S_connecter{
+        width: 260px;
+        height: 350px;
+        margin-left: 8%;
+        
+    }
+}
+
+@media screen and (min-width:1640px) {
+    nav button{
+    font-size: 30px;
+    border-radius: 20px;
+    padding: 15px;
+    }
+    .acc-menu a{
+        font-size: 28px;
+        padding: 45px;
+    }
+    .landing-page{
+        align-items: center;
+    }
+    .big-title{
+        font-size: 60px;
+    }
+    .accueil-text{
+        font-size: 30px;
+    }
+    footer a {
+        font-size:30px
+    }
+    
+}
+
+ @media screen and (max-width:500px) {
+     footer{
+         position: relative;
+     }
+    footer a{
+        font-size: 16px;
+    }
+   
+    .form-title{
+        width: 290px;
+    }
+    .text{
+        text-align: center;
+    }
+} 

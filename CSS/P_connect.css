@@ -1,0 +1,181 @@
+body{
+    margin:0 ;
+    background: url(../image/fond\ de\ base\ .png);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+/* haut de page  */
+
+header{
+    /* background: rgb(174, 162, 162); */
+    background: url(../image/back-ecriture.png);  
+}
+
+nav{
+    align-items: center; 
+    margin-left: 3%;
+    display: inline-flex;
+    justify-content: space-between;
+    width: 90%;
+    height: 97px;
+    
+}
+
+.acc-menu a {
+   
+    justify-content: space-between;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    align-items: center;
+    padding: 32px;
+
+}
+nav img{
+    display: inline-flex;
+    width: 80px;
+    height: 10vh;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.acc-menu a:hover{
+    background: rgb(237, 238, 241);
+    color: black;
+}
+nav button{
+    padding: 8px;
+    border-radius: 10px;
+    
+}
+nav button a {
+    text-decoration: none;
+}
+.connexion{
+    display: none;
+}
+.toggle{
+    display:none;
+}
+.connect{
+    display:none;
+}
+
+
+/* contenu */
+
+.middle-page{
+    flex:1 0 auto;
+    min-height: 100%;
+    position: relative;
+    margin:3%
+}
+.S_connecter{
+    /* display: flex; */
+    background-color: white;
+    background-size: cover;
+    margin-left:15%;
+    margin-top: 7%;
+    border-radius: 10px;
+    padding-left: 2%;
+    padding-right: 2%;
+    opacity:0.9;
+    width: 450px; 
+    height: 400px;
+}
+.S_connecter h1{
+    text-align: center;
+}
+
+form div{
+display: flex;
+flex-direction: column;
+margin-top: 5%;
+font-weight: 550;
+
+}
+
+form button {
+    height: 7%;
+    font-weight: 750;
+    background-color: rgb(76, 134, 209);
+    color: white;
+    border: rgba(48, 48, 48, 0.5) solid 1px;
+    border-radius: 5px;
+    align-items: center;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
+    
+
+}
+
+form input{
+    /* background-color: rgba(219, 223, 222, 0.384); */
+    border-radius: 5px;
+    margin-left: 3%;
+    background-color: #cccbcb;
+    border: solid 0px;
+    height: 25px;
+    
+    /* width: 70%; */
+}
+
+
+.space-mail{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.space-mail input{
+    width: 100%;
+}
+.space-mdp input{
+    width: 100%;
+}
+
+.space-mdp{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.case-cauche{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+
+.bout-connect{
+    margin-bottom: 5%;
+    margin-top: 5%;
+    margin-left: 3%;
+}
+
+/* bas de page */
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    flex-shrink: 0;
+    width: 100%;
+    height: 40px;
+    position:absolute;
+    bottom: 0px;
+    left: 0px;
+    background: url(../image/back-ecriture.png);
+    
+}
+footer a{
+    display: inline-flex;
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    align-items: center;
+    padding-right: 20px;
+    padding-left: 20px;
+}

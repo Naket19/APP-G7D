@@ -1,0 +1,193 @@
+body{
+    background: url(../image/fond\ de\ base\ .png);
+    background-size: cover;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* haut de page  */
+
+header{
+    /* background: rgb(174, 162, 162); */
+    background: url(../image/back-ecriture.png);  
+}
+
+nav{
+    align-items: center; 
+    margin-left: 3%;
+    display: inline-flex;
+    justify-content: space-between;
+    width: 90%;
+    height: 97px;
+    
+}
+
+.acc-menu a {
+   
+    justify-content: space-between;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    align-items: center;
+    padding: 32px;
+
+}
+nav img{
+    display: inline-flex;
+    width: 80px;
+    height: 10vh;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.acc-menu a:hover{
+    background: rgb(237, 238, 241);
+    color: black;
+}
+nav button{
+    padding: 8px;
+    border-radius: 10px;
+    
+}
+nav button a {
+    text-decoration: none;
+}
+.connexion{
+    display: none;
+}
+.toggle{
+    display:none;
+}
+.connect{
+    display:none;
+}
+
+/* contenu */
+.contenu{
+    flex:1 0 auto;
+    min-height: 100%;
+    position: relative;
+    margin:3%
+}
+.form-page{
+    display: flex;
+    justify-content: center;
+    margin-top: 7%;
+    
+}
+
+.form-title{
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+    border-radius: 10px; 
+    opacity: 0.92;
+    width: 55%; 
+}
+.text-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;   
+
+}
+
+.separation{
+
+    height: 2px;
+    background-color:rgb(76, 134, 209);;
+}
+
+.text{
+    font-size: 8px;
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: justify;
+}
+.mail{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+
+}
+
+.mail input{
+    width: 98%;
+}
+.demande{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.demande input{
+    height: 150px;
+    text-align: justify;
+}
+
+
+form input{
+    border-radius: 4px;
+    justify-content: flex-start;
+    background-color: #cccbcb;
+    border: rgba(48, 48, 48, 0.5) solid 0px;
+    height: 25px;
+    margin-top: 1%;
+}
+
+form button {
+    height: 30px;
+    font-weight: 750;
+    background-color: rgb(76, 134, 209);
+    color: white;
+    border: rgba(48, 48, 48, 0.5) solid 1px;
+    border-radius: 5px;
+    align-items: center;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
+    text-align: center;
+    margin-bottom: 4%;
+    margin-left: 5%;
+    width: 90%;
+
+}
+
+form textarea {
+    padding: 10px;
+    border-radius: 5px;
+    resize: none ;
+    outline: none;
+    background-color: #cccbcb;
+    border :rgb(76, 134, 209);
+}
+
+
+/* bas de page */
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    flex-shrink: 0;
+    width: 100%;
+    height: 40px;
+    position:relative;
+    bottom: 0px;
+    left: 0px;
+    background: url(../image/back-ecriture.png);
+    
+}
+footer a{
+    display: inline-flex;
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    align-items: center;
+    padding-right: 20px;
+    padding-left: 20px;
+}
