@@ -72,6 +72,10 @@ nav button a {
 }
 .landing-page{
     display: inline-flex;
+    background: url(../image/back-ecriture.png);
+    background-size: cover;
+    padding: 4%;
+    border-radius: 10px;
 }
 .big-title{
     display: flex;
@@ -83,6 +87,9 @@ nav button a {
     display: flex;
     font-size: 21px;
     text-align: justify;
+    background-color: burlywood;
+    padding: 5%;
+    border-radius: 10px;
 }
 /* .slider{
     width: 600px;
@@ -120,7 +127,7 @@ footer{
     flex-shrink: 0;
     width: 100%;
     height: 40px;
-    position:absolute;
+    position:relative;
     bottom: 0px;
     left: 0px;
     background: url(../image/back-ecriture.png);
