@@ -1,10 +1,14 @@
 body{
     margin:0 ;
     background: url(../image/fond\ de\ base\ .png);
-    background-size: cover;
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: 0px 100px;
+    background-size: 50%;
     display: flex;
     flex-direction: column;
 }
+
 
 /* haut de page  */
 
@@ -68,23 +72,26 @@ nav button a {
 /* contenu */
 
 .middle-page{
-    flex:1 0 auto;
-    min-height: 100%;
+    /*flex:1 0 auto;*/
+    width: 450px; 
+    height: 400px;
+    left: 50%;
     position: relative;
-    margin:3%
+    margin:3%;
+    box-shadow: 1px 1px 12px #555;
+    border-radius: 5%;
+    width: 600px; 
+    height: 600px;
 }
 .S_connecter{
     /* display: flex; */
-    background-color: white;
-    background-size: cover;
-    margin-left:15%;
-    margin-top: 7%;
-    border-radius: 10px;
+
+    margin: 3%;
+    height: 95%;
     padding-left: 2%;
     padding-right: 2%;
     opacity:0.9;
-    width: 450px; 
-    height: 400px;
+
 }
 .S_connecter h1{
     text-align: center;
@@ -121,8 +128,16 @@ form input{
     
     /* width: 70%; */
 }
-
-
+.leform{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    height: 500px;
+}
+.fa-solid {
+    color: rgb(76, 134, 209);
+}
 .space-mail{
     display: flex;
     flex-direction: row;
@@ -154,6 +169,8 @@ form input{
     margin-bottom: 5%;
     margin-top: 5%;
     margin-left: 3%;
+    height: 200%;
+
 }
 
 /* bas de page */
@@ -178,4 +195,13 @@ footer a{
     align-items: center;
     padding-right: 20px;
     padding-left: 20px;
+}
+p{
+    font: caption;
+}
+h1{
+    font: caption;
+    font-size: 200%;
+    text-align: left;
+    font-weight: bold;
 }
