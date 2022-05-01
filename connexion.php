@@ -97,7 +97,7 @@ if(isset($_POST['connexion'])){
             </div>
             <div class="case-cauche">
                 <input type="checkbox" id="reponse-1" name="reponse-1" />
-                <label for="reponse-1"> Se souvenir</label>
+                <label for="reponse-1"> Se souvenir de moi</label>
             </div>
             <div class="bout-connect">
                 <button type="submit" name="connexion" value="connexion">Se connecter</button>
@@ -107,7 +107,7 @@ if(isset($_POST['connexion'])){
     </div>
     <footer>
         <a href="P_nousContacter.php">Nous contacter</a>
-        <a href="">Mention légal</a>
+        <a href="">Mentions légales</a>
         <a href="">&copy;INFINITE MEASURE</a>
     </footer>
     <script src="app.js"></script>

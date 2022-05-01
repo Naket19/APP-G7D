@@ -128,7 +128,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
     <footer>
         <a href="P_nousContacter.php">Nous contacter</a>
-        <a href="">Mention légal</a>
+        <a href="">Mentions légales</a>
         <a href="">&copy;INFINITE MEASURE</a>
     </footer>
     <script src="app.js"></script>
