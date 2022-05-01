@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $téléphone = $_POST["téléphone"];
     $adresse = $_POST["adresse"];
-    $mot_de_passe = $_POST["mot_de_passe"];
+    $mot_de_passe = password_hash($_POST["mot_de_passe"], PASSWORD_ARGON2ID) ;
 
 
     if (isset($_POST['nom'], $_POST['prénom'], $_POST['nombre_de_patient'], $_POST['email'], $_POST['téléphone'], $_POST['adresse'], $_POST['mot_de_passe'])) {
