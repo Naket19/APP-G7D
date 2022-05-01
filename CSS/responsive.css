@@ -60,6 +60,9 @@
         display: none;
         transition: 3s;
     }
+    .open .landing-page{
+        display: none;
+    }
     nav button{
         display: none;
     }
