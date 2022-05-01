@@ -4,6 +4,7 @@ body{
     background-size: cover; 
     display: flex;
     flex-direction: column;
+    font-family: 'Poppins';font-size: 22px;
 }
 /* haut de page  */
 

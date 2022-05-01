@@ -43,6 +43,7 @@ if(isset($_POST['connexion'])){
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" 
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="CSS/responsive.css">
     <title>Infinite Measure</title>
 
@@ -61,10 +62,10 @@ if(isset($_POST['connexion'])){
                 <a href="P_faq.html">FAQ</a>
                 <a href="">Application Ludique</a>
                 <a href="Profil.html">Mon compte</a>
-                <div class="connect"><a href="" >connexion</a></div>
+                <div class="connect"><a href="connexion.php" >connexion</a></div>
                 
             </div>
-            <button>Connexion</button>
+            <button> <a href="connexion.php"> Connexion</a></button>
         </nav>
     </header>
     <div class="middle-page">
@@ -97,7 +98,7 @@ if(isset($_POST['connexion'])){
         </div>
     </div>
     <footer>
-        <a href="P_nousContacter.html">Nous contacter</a>
+        <a href="P_nousContacter.php">Nous contacter</a>
         <a href="">Mention légal</a>
         <a href="">&copy;INFINITE MEASURE</a>
     </footer>

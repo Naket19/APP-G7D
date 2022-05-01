@@ -1,5 +1,5 @@
 body{
-    background-image: url(C:\xampp\htdocs\APP-G7D\image\background.png) ;
+    background-image: url(../image/background.png) ;
     display: flex;
     background-size: cover;
     margin: 0;
@@ -67,15 +67,15 @@ nav button a {
 
 /* contenu */
 
-.contenu{   
+.F_contenu{   
     padding-left: 10%;
     padding-right: 10%;
-    min-height: 100%;
+    border-radius: 20px;
     position: relative;
     background-color: aliceblue;
     width: 55%;
-    margin-top: 7%;
-    margin:auto ;
+    /* margin-top: 7%; */
+    margin: 7% auto ;
     opacity: 0.92;
 }
 .champ{  
@@ -106,7 +106,17 @@ nav button a {
     height: 2px;
     background-color:rgb(76, 134, 209);;
 }
-
+form button{
+    height: 35Px;
+    font-weight: 700;
+    font-size: 14px;
+    background-color: rgb(76, 134, 209);
+    color: white;
+    border: rgba(48, 48, 48, 0.5) solid 1px;
+    border-radius: 5px;
+    align-items: center;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
+}
 
 /* bas de page */
 

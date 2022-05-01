@@ -61,6 +61,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="CSS/P_inscription.css">
     <link rel="stylesheet" href="CSS/responsive.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"> </script>
+    <script src="https://kit.fontawesome.com/bb762585be.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" 
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <script src="script.js" defer></script>
     <title>Mon site - Connexion</title>
 </head>
@@ -79,14 +84,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <a href="">Données Capteurs</a>
                 <a href="P_faq.html">FAQ</a>
                 <a href="">Application Ludique</a>
-                <a href="">Mon compte</a>
+                <a href="Profil.html">Mon compte</a>
                 <div class="connect"><a href="P_connexion.html">connexion</a></div>
 
             </div>
             <button><a href="P_connexion.html"> Connexion</a></button>
         </nav>
     </header>
-    <div class="contenu">
+    <div class="F_contenu">
         <div class="text-title">
             <h1>Inscription</h1>
             <div class="text">
@@ -122,10 +127,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
     </div>
     <footer>
-        <a href="P_nousContacter.html">Nous contacter</a>
+        <a href="P_nousContacter.php">Nous contacter</a>
         <a href="">Mention légal</a>
         <a href="">&copy;INFINITE MEASURE</a>
     </footer>
+    <script src="app.js"></script>
 </body>
 
 </html>

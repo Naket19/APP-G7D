@@ -80,7 +80,10 @@
     .open .phase{
         display: none;
     }
-    
+    /* page inscription */
+    .open .F_contenu{
+        display: none;
+    }
     /* Page connexion */
     .open .S_connecter{
         display: none;
