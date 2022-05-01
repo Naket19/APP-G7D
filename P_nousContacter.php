@@ -47,16 +47,16 @@
                     </div>
                 </div>
                 <div class="formulaire">
-                    <form action="" method="post">
+                    <form method="post">
                         <div class="mail">
                             <label for="email">Email :</label>
                             <div class="space-mail">
-                                <input type="email" id=" email">
+                                <input type="email" name="email" required>
                             </div>
                         </div>
                         <div class="demande">
                             <label for="text">Message :</label>
-                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                            <textarea name="message" required  cols="30" rows="10"></textarea>
                         </div>
                         <div class="bout-connect">
                             <button type="submit"> ENVOYER </button>
@@ -66,6 +66,12 @@
             </div>
         </div>
     </div>
+    <?php
+    if (isset($_POST["message"])){
+        $retour = mail("appg7d@gmail.com","envoie depuis la page de contact de  ",$_POST["message"],'From: webmaster@monsite.fr' . "\r\n" . 'Reply-to: ' . $_POST['email']);
+    }
+    
+    ?>
     <footer>
         <a href="P_nousContacter.html">Nous contacter</a>
         <a href="">Mention légal</a>
