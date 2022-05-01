@@ -85,10 +85,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <a href="P_faq.html">FAQ</a>
                 <a href="">Application Ludique</a>
                 <a href="Profil.html">Mon compte</a>
-                <div class="connect"><a href="P_connexion.html">connexion</a></div>
+                <div class="connect"><a href="connexion.php">connexion</a></div>
 
             </div>
-            <button><a href="P_connexion.html"> Connexion</a></button>
+            <button><a href="connexion.php"> Connexion</a></button>
         </nav>
     </header>
     <div class="F_contenu">

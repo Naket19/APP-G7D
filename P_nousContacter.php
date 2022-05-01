@@ -31,7 +31,7 @@
                 <div class="connect"><a href="connexion.php" >connexion</a></div>
                 
             </div>
-            <button><a href="P_connexion.html"> Connexion</a></button>
+            <button><a href="connexion.php"> Connexion</a></button>
         </nav>
     </header>
     <div class="contenu">
