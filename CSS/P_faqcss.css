@@ -1,19 +1,68 @@
 body{
     background: url(../image/background.png);
-    background-repeat: no-repeat;
+    margin: 0 auto;
+    /* background-repeat: no-repeat; */
     background-size: 100%;
 }
+/* haut de page  */
+
 header{
-    background-color: red;
-    height: 10vh;
-    width: 100%;
+  /* background: rgb(174, 162, 162); */
+  background: url(../image/back-ecriture.png);  
 }
 
-footer{
-    height: 10vh;
-    width: 100%;
-    background-color: red;
+nav{
+  align-items: center; 
+  margin-left: 3%;
+  display: inline-flex;
+  justify-content: space-between;
+  width: 90%;
+  height: 97px;
+  
 }
+
+.acc-menu a {
+ 
+  justify-content: space-between;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  align-items: center;
+  padding: 32px;
+
+}
+nav img{
+  display: inline-flex;
+  width: 80px;
+  height: 10vh;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.acc-menu a:hover{
+  background: rgb(237, 238, 241);
+  color: black;
+}
+nav button{
+  padding: 8px;
+  border-radius: 10px;
+  
+}
+nav button a {
+  text-decoration: none;
+}
+.connexion{
+  display: none;
+}
+.toggle{
+  display:none;
+}
+.connect{
+  display:none;
+}
+
+
 .centredepage{
     left: 20%;
     position: relative;
@@ -133,3 +182,28 @@ footer{
     max-height: 100vh;
     padding: 1em;
   }
+
+  
+/* bas de page */
+
+footer{
+  display: flex;
+  justify-content: space-between;
+  flex-shrink: 0;
+  width: 100%;
+  height: 40px;
+  position:absolute;
+  bottom: 0px;
+  left: 0px;
+  background: url(../image/back-ecriture.png);
+  
+}
+footer a{
+  display: inline-flex;
+  text-decoration: none;
+  color: #000;
+  font-size: 20px;
+  align-items: center;
+  padding-right: 20px;
+  padding-left: 20px;
+}

@@ -1,3 +1,34 @@
+<?php
+require "PHP/config.php";
+session_start();
+
+if(isset($_POST['connexion'])){
+    if(empty($_POST['email'])){
+        echo "Le champ Pseudo est vide.";
+    } else {
+        if(empty($_POST['mot_passe'])){
+            echo "Le champ Mot de passe est vide.";
+        } else {
+            $Pseudo = $_POST["email"];
+            $MotDePasse = $_POST["mot_passe"];
+            if(!$link){
+                echo "Erreur de connexion à la base de données.";
+            } else {
+                $Requete = mysqli_query($link,"SELECT * FROM parent WHERE email = '".$Pseudo."' AND mot_de_passe = '".$MotDePasse."'");
+                if(mysqli_num_rows($Requete) == 0) {
+                    echo "Le pseudo ou le mot de passe est incorrect, le compte n'a pas été trouvé.";
+                } else {
+                    echo "Vous êtes à présent connecté !";
+                }
+            }
+        }
+    }
+}
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -22,11 +53,11 @@
                 <i class="fa-solid fa-circle-xmark fermer"></i>
             </div>
             <div class="acc-menu">
-                <a href="Page_accueil.html">Accueil</a>
+                <a href="Index.html">Accueil</a>
                 <a href="">Données Capteurs</a>
-                <a href="">FAQ</a>
+                <a href="P_faq.html">FAQ</a>
                 <a href="">Application Ludique</a>
-                <a href="">Mon compte</a>
+                <a href="Profil.html">Mon compte</a>
                 <div class="connect"><a href="" >connexion</a></div>
                 
             </div>
@@ -36,20 +67,20 @@
     <div class="middle-page">
         <div class="S_connecter">
             <h1> Connexion à votre compte</h1>
-            <form action="" method="post">
+            <form action="connexion.php" method="post">
                 
             <div class="mail">
                 <label for="email">Email ID</label>
                 <div class="space-mail">
                     <i class="fa-solid fa-envelope"></i>
-                    <input type="email" id=" email">
+                    <input type="email" name=" email">
                 </div>
             </div>
             <div class="MDP">
                 <label for="mot_passe"> Mot de passe</label>
                 <div class="space-mdp">
                     <i class="fa-solid fa-lock"></i>
-                    <input type="text" id=" mot_passe">
+                    <input type="password" name=" mot_passe">
                 </div>
             </div>
             <div class="case-cauche">
@@ -57,7 +88,7 @@
                 <label for="reponse-1"> Se souvenir</label>
             </div>
             <div class="bout-connect">
-                <button type="submit">Se connecter</button>
+                <button type="submit" name="connexion" value="connexion">Se connecter</button>
             </div>
             <p>Si vous n'avez pas de compte, aller dans la section nous contacter en base de la page pour faire une demande de création de compte.</p>
         </div>
