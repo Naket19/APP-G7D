@@ -12,6 +12,7 @@
     }
     .toggle .ouvrir{
         display: block;
+        color: black;
     }
   
     .open .ouvrir{
@@ -19,7 +20,7 @@
     }
     .open .fermer{
         display: block;
-        color: white;
+        color: black;
     }
     .open footer{
         display: none;
@@ -62,6 +63,21 @@
     nav button{
         display: none;
     }
+    /* profil */
+    .open .form-title{
+        display: none;
+    }
+    /* page d'accueil */
+    .open .landing-page{
+        background: none;
+    }
+    .open .presentation{
+        display: none;
+    }
+    .open .phase{
+        display: none;
+    }
+    
     /* Page connexion */
     .open .S_connecter{
         display: none;
@@ -81,11 +97,18 @@
         margin: 6%;
     }
     .S_connecter{
-        width: 260px;
-        height: 350px;
-        margin-left: 8%;
-        
+        width: 270px;
+        position: none;
+        left: 0%;
+        height: 400px;
+        margin: 1%;
+        margin-bottom: 5%;
+        font-size: 85%;
     }
+   .S_connecter P{
+       font-size: 85%;
+   }
+   
 }
 
 @media screen and (min-width:1640px) {
@@ -110,15 +133,27 @@
     footer a {
         font-size:30px
     }
+    @media screen and (max-height:910px) {
+        footer{
+            position: relative;
+        }
+    }
+    .S_connecter{
+        font-size: 120%;
+        width: 600px;
+    }
+    .S_connecter h1{
+        text-align: center;
+    }
     
 }
 
  @media screen and (max-width:500px) {
-     footer{
+     /* footer{
          position: relative;
-     }
+     } */
     footer a{
-        font-size: 16px;
+        font-size: 14px;
     }
    
     .form-title{
@@ -128,3 +163,4 @@
         text-align: center;
     }
 } 
+

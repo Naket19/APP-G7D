@@ -75,9 +75,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <i class="fa-solid fa-circle-xmark fermer"></i>
             </div>
             <div class="acc-menu">
-                <a href="Page_accueil.html">Accueil</a>
+                <a href="Index.html">Accueil</a>
                 <a href="">Données Capteurs</a>
-                <a href="">FAQ</a>
+                <a href="P_faq.html">FAQ</a>
                 <a href="">Application Ludique</a>
                 <a href="">Mon compte</a>
                 <div class="connect"><a href="P_connexion.html">connexion</a></div>
@@ -121,7 +121,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </form>
     </div>
-
     <footer>
         <a href="P_nousContacter.html">Nous contacter</a>
         <a href="">Mention légal</a>
