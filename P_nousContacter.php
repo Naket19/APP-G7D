@@ -41,7 +41,7 @@
                     <h1>Nous Contacter</h1>
                     <div class="text" align="center"> 
                         <div class="separation"></div>
-                        <h1>Pour joindre l'adiministrateur,
+                        <h1>Pour joindre l'administrateur,
                                 merci de joindre votre email ainsi
                                 que votre demande ci-dessous : 
                             </h1>
