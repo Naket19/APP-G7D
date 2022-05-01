@@ -1,3 +1,9 @@
+<?php
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -36,7 +42,7 @@
     <div class="middle-page">
         <div class="S_connecter">
             <h1> Connexion à votre compte</h1>
-            <form action="" method="post">
+            <form action="P_connexion.php" method="post">
                 
             <div class="mail">
                 <label for="email">Email ID</label>
