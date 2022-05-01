@@ -9,14 +9,17 @@ if(isset($_POST['connexion'])){
         if(empty($_POST['mot_passe'])){
             echo "Le champ Mot de passe est vide.";
         } else {
-            $Pseudo = $_POST["email"];
-            $MotDePasse = $_POST["mot_passe"];
+            $email = $_POST["email"];
+            $mot_de_passe = $_POST["mot_de_passe"];
+            
+            
             if(!$link){
                 echo "Erreur de connexion à la base de données.";
             } else {
-                $Requete = mysqli_query($link,"SELECT * FROM parent WHERE email = '".$Pseudo."' AND mot_de_passe = '".$MotDePasse."'");
+                $Requete = mysqli_query($link,"SELECT * FROM parent WHERE email = '".$email."' AND mot_de_passe = '".md5($mot_de_passe)."'");
                 if(mysqli_num_rows($Requete) == 0) {
                     echo "Le pseudo ou le mot de passe est incorrect, le compte n'a pas été trouvé.";
+                    echo md5($mot_de_passe);
                 } else {
                     echo "Vous êtes à présent connecté !";
                 }
