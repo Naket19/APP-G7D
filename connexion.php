@@ -2,15 +2,19 @@
 require "PHP/config.php";
 session_start();
 
+
+
 if(isset($_POST['connexion'])){
+    $email = $_POST["email"];
+    $mot_de_passe = $_POST["mot_de_passe"];
+
     if(empty($_POST['email'])){
         echo "Le champ Pseudo est vide.";
     } else {
-        if(empty($_POST['mot_passe'])){
+        if(empty($_POST['mot_de_passe'])){
             echo "Le champ Mot de passe est vide.";
         } else {
-            $email = $_POST["email"];
-            $mot_de_passe = $_POST["mot_de_passe"];
+            
             
             
             if(!$link){
@@ -19,7 +23,6 @@ if(isset($_POST['connexion'])){
                 $Requete = mysqli_query($link,"SELECT * FROM parent WHERE email = '".$email."' AND mot_de_passe = '".md5($mot_de_passe)."'");
                 if(mysqli_num_rows($Requete) == 0) {
                     echo "Le pseudo ou le mot de passe est incorrect, le compte n'a pas été trouvé.";
-                    echo md5($mot_de_passe);
                 } else {
                     echo "Vous êtes à présent connecté !";
                 }
@@ -27,6 +30,11 @@ if(isset($_POST['connexion'])){
         }
     }
 }
+
+
+
+
+
 
 ?>
 
@@ -84,7 +92,7 @@ if(isset($_POST['connexion'])){
                 <label for="mot_passe"> Mot de passe</label>
                 <div class="space-mdp">
                     <i class="fa-solid fa-lock"></i>
-                    <input type="password" name=" mot_passe">
+                    <input type="password" name=" mot_de_passe">
                 </div>
             </div>
             <div class="case-cauche">

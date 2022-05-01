@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $téléphone = $_POST["téléphone"];
     $adresse = $_POST["adresse"];
-    $mot_de_passe = md5($mot_de_passe);
+    $mot_de_passe = md5($_POST["mot_de_passe"]);
 
 
     if (isset($_POST['nom'], $_POST['prénom'], $_POST['nombre_de_patient'], $_POST['email'], $_POST['téléphone'], $_POST['adresse'], $_POST['mot_de_passe'])) {
