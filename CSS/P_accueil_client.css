@@ -1,0 +1,42 @@
+.categories {
+    background-color: white;
+}
+.categories h1{
+    line-height: 1;
+    margin-bottom: 3rem;
+}
+
+.categories_container{
+    display: grid;
+    grid-template-columns: 45% 50%;
+    gap: 4rem;
+}
+.categories_left p{
+    margin: 1rem 0 3rem;
+}
+.categories_right {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.category {
+    background-color: rgb(91, 91, 173);
+    padding: 2rem;
+    border-radius: 2rem;
+    transition: var(--transition);
+}
+.category:hover{
+    box-shadow: 0 3rem 3rem rgba(0, 0, 0, 0.3);
+}
+.category_icon{
+    background-color: aqua;
+    padding: 0.7rem;
+    border-radius: 0.9rem;
+}
+.categories h5{
+    margin: 2rem 0 1rem;
+}
+.category p{
+    font-size: 0.85rem;
+}

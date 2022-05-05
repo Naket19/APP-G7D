@@ -1,3 +1,38 @@
+<?php 
+require "PHP/config.php";
+session_start();
+$idcompte = $_SESSION['APP']['numero'];
+$resultat = mysqli_query($link,"SELECT nom FROM parent WHERE idParent = '".$idcompte."'");
+$row = mysqli_fetch_array($resultat, '1');
+$nom = $row['nom'];
+
+$resultat = mysqli_query($link,"SELECT prénom FROM parent WHERE idParent = '".$idcompte."'");
+$row = mysqli_fetch_array($resultat, '1');
+$prenom = $row['prénom'];
+
+$resultat = mysqli_query($link,"SELECT email FROM parent WHERE idParent = '".$idcompte."'");
+$row = mysqli_fetch_array($resultat, '1');
+$mail = $row['email'];
+
+$resultat = mysqli_query($link,"SELECT téléphone FROM parent WHERE idParent = '".$idcompte."'");
+$row = mysqli_fetch_array($resultat, '1');
+$tel = $row['téléphone'];
+
+$resultat = mysqli_query($link,"SELECT adresse FROM parent WHERE idParent = '".$idcompte."'");
+$row = mysqli_fetch_array($resultat, '1');
+$adresse = $row['adresse'];
+
+$resultat = mysqli_query($link,"SELECT nombre_de_patient FROM parent WHERE idParent = '".$idcompte."'");
+$row = mysqli_fetch_array($resultat, '1');
+$nbpatients = $row['nombre_de_patient'];
+
+if(isset($_POST['deconnexion'])){
+        session_destroy();
+    // ne marche pas 
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -30,10 +65,10 @@
                 <a href="P_faq.html">FAQ</a>
                 <a href="">Application Ludique</a>
                 <a href="Profil.html">Mon compte</a>
-                <div class="connect"><a href="connexion.php">connexion</a></div>
+                <div class="connect"><a href="connexion.php">Connexion</a></div>
 
             </div>
-            <button><a href="connexion.php"> Connexion</a></button>
+            <button><a href="connexion.php" type="submit" name="deconnexion" value="deconnexion"> déconnexion</a></button>
         </nav>
     </header>
     <div class="contenu ">
@@ -53,29 +88,29 @@
             </div>
             <div class="profil">
                 <div class="encadrer">
-                    Nom:
+                    Nom: <?php echo $nom ?>
                 </div>
                 <div class="encadrer">
-                    Mail:
+                    Mail: <?php echo $mail ?>
                 </div>
                 <div class="encadrer">
-                    Prénom:
+                    Prénom: <?php echo $prenom ?>
                 </div>
                 <div class="encadrer">
-                    Mot de passe:
+                    Nb de patients : <?php echo $nbpatients ?>
                 </div>
                 <div class="encadrer">
-                    Date de naissance:
+                    Adresse: <?php echo $adresse ?>
                 </div>
                 <div class="encadrer">
-                    Telephone:
+                    Telephone: <?php echo $tel ?>
                 </div>
             </div>
         </div>
     </div>
     <footer>
         <a href="P_nousContacter.php">Nous contacter</a>
-        <a href="">Mentions légales</a>
+        <a href="mentions_légales.html">Mentions légales</a>
         <a href="">&copy;INFINITE MEASURE</a>
     </footer>
     <script src="app.js"></script>

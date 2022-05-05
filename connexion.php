@@ -24,7 +24,14 @@ if(isset($_POST['connexion'])){
                 if(mysqli_num_rows($Requete) == 0) {
                     echo "Le pseudo ou le mot de passe est incorrect, le compte n'a pas été trouvé.";
                 } else {
+                    $resultat = mysqli_query($link,"SELECT idParent FROM parent WHERE email = '".$email."' AND mot_de_passe = '".md5($mot_de_passe)."'");
+                    $row = mysqli_fetch_array($resultat, '1');
+                    $idcompte = $row['idParent'];
+                    echo $idcompte;
+                    $_SESSION['APP']['numero'] = $idcompte;
+                    echo $_SESSION['APP']['numero'];
                     echo "Vous êtes à présent connecté !";
+                    header('Location: accueil_client.php');
                 }
             }
         }
@@ -70,7 +77,7 @@ if(isset($_POST['connexion'])){
                 <a href="P_faq.html">FAQ</a>
                 <a href="">Application Ludique</a>
                 <a href="Profil.html">Mon compte</a>
-                <div class="connect"><a href="connexion.php" >connexion</a></div>
+                <div class="connect"><a href="connexion.php" >Connexion</a></div>
                 
             </div>
             <button> <a href="connexion.php"> Connexion</a></button>
@@ -107,7 +114,7 @@ if(isset($_POST['connexion'])){
     </div>
     <footer>
         <a href="P_nousContacter.php">Nous contacter</a>
-        <a href="">Mentions légales</a>
+        <a href="mentions_légales.html">Mentions légales</a>
         <a href="">&copy;INFINITE MEASURE</a>
     </footer>
     <script src="app.js"></script>

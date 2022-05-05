@@ -28,7 +28,7 @@
                 <a href="P_faq.html">FAQ</a>
                 <a href="">Application Ludique</a>
                 <a href="Profil.html">Mon compte</a>
-                <div class="connect"><a href="connexion.php" >connexion</a></div>
+                <div class="connect"><a href="connexion.php" >Connexion</a></div>
                 
             </div>
             <button><a href="connexion.php"> Connexion</a></button>
@@ -105,6 +105,20 @@
             
         </p>
     </div></div>
+    <div class="titreutilisateurs">
+        <h1 class="titreutil">NOTRE ÉQUIPE </h1> <br>
+        <div class="utilisateurs">
+        <p> <h3><img src="image/patricia.jpeg" alt=""><br> Patricia CONDE-CESPEDES <br>Directrice Technique</h3>
+          
+        </p>
+        <p><h3><img src="image/Ammar.jpeg" alt="" width="175" height="175"> <br> Ammar KHEIRBEK  <br> CEO </h3>
+             
+        </p>
+        <p><h3><img src="image/njima.jpeg" alt=""> <br> Wafa NJIMA <br>Directrice communication</h3>
+            
+        </p>
+    </div>
+    
     <div class="histoire">
         <h1>NOTRE HISTOIRE</h1> <br>
         L'entreprise Infinite Measures est née d'une association de plusieurs entrepreneurs
@@ -119,7 +133,7 @@
     
     <footer>
         <a href="P_nousContacter.php">Nous contacter</a>
-        <a href="">Mentions légales</a>
+        <a href="mentions_légales.html">Mentions légales</a>
         <a href="">&copy;INFINITE MEASURE</a>
     </footer>
     <script src="app.js"></script>
