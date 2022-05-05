@@ -3,8 +3,19 @@
 require "PHP/config.php";
 
 //Verification des champs
+function Genere_Password($size)
+{
+    $password = "a";
+    $characters = array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z");
 
-
+    for($i=0;$i<$size;$i++)
+    {
+    
+        $password .= ($i%2) ? strtoupper($characters[array_rand($characters)]) : $characters[array_rand($characters)];
+    }
+		
+    return $password;
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -14,10 +25,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $téléphone = $_POST["téléphone"];
     $adresse = $_POST["adresse"];
-    $mot_de_passe = md5($_POST["mot_de_passe"]);
-
-
-    if (isset($_POST['nom'], $_POST['prénom'], $_POST['nombre_de_patient'], $_POST['email'], $_POST['téléphone'], $_POST['adresse'], $_POST['mot_de_passe'])) {
+    $mot_de_passenc= Genere_Password(12);
+    $mot_de_passe = md5($mot_de_passenc);
+    $sujet = " Informations de connexion à la plateforme";
+    $corp = "Bonjour $nom $prénom, Voici vos informations de connexion pour votre compte chez infinite measures : E-mail de connexion : $email  Mot de passe : $mot_de_passenc ";
+    $headers ="";
+    if (isset($_POST['nom'], $_POST['prénom'], $_POST['nombre_de_patient'], $_POST['email'], $_POST['téléphone'], $_POST['adresse'])) {
         if (empty($_POST['nom']) || empty($_POST['nom']) || empty($_POST['nom']) || empty($_POST['nom']) || empty($_POST['nom']) || empty($_POST['nom']) || empty($_POST['nom']) || empty($_POST['nom'])) {
             echo "Veuillez remplir tous les champs";
         } elseif (!preg_match('/[a-zA-Z]+$/', trim($_POST['nom']))) {
@@ -41,7 +54,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $statement->bind_param('sssssss', $nom, $prénom, $nombre_de_patient, $email, $téléphone, $adresse, $mot_de_passe);
 
             if ($statement->execute()) {
-                print "incription fini";
+                echo "c'est bon";
+                mail($email, $sujet, $corp, $headers);
                 header('Location: connexion.php');
             } else {
                 print $link->error;
@@ -118,9 +132,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <div class="champ">
                 <input type="text" name="adresse" class="input" placeholder="Adresse">
-            </div>
-            <div class="champ">
-                <input type="password" name="mot_de_passe" class="input" placeholder="Mot de Passe">
             </div>
             <div class="champ">
                 <button type="submit">Inscription</button>
