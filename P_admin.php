@@ -1,11 +1,12 @@
 <?php
     session_start();
-    // require_once('PHP/config.php');
-    $bdd = new PDO('mysql:host=localhost; dbname=app_g7d_infinite_measure;','root','')
-    // $req_membres = $link->prepare("SELECT * FROM parent");
-    // $req_membres->execute();
-
-    // $req_membres = $req->fetchAll(); 
+    $bdd = new PDO('mysql:host=localhost; dbname=app_g7d_infinite_measure;','root','');
+    $alluser = $bdd->query('SELECT * FROM parent ORDER BY idParent ');
+    if(isset($_GET['s']) AND !empty($_GET['s']) ){
+        $recherche = htmlspecialchars($_GET['s']);
+        $alluser = $bdd->query('SELECT * FROM parent WHERE nom LIKE"%'.$recherche.'%"
+        OR prénom LIKE"%'.$recherche.'%" ORDER BY idParent ');
+    }
 
 ?>
 
@@ -44,24 +45,103 @@
         </nav>
     </header>
     <div class="tableau_bord">
-        <div class="Id">
-            <?php
-                // foreach($req_membres as $rm){
-                //    echo $rm['idParent']; 
-                // }
-            ?>
+        <div class="barre_recherche">
+            <form method="GET">
+                <input type="search" name="s" placeholder="recherche un utilisateur">
+                <input type="submit"name="envoyer">
+            </form>
+            <div class="afficher_utilisateur">
+    
+            </div>
         </div>
-        <div class="ligne1"></div>
-        <div class="utilisateurs">
-            <?php
-                $recupUser = $bdd->query('SELECT * FROM parent');
-                while($user = $recupUser->fetch()){
-                    echo $user['nom'];
-                }
-                // foreach($req_membres as $rm){
-                //    echo $rm['nom']; 
-            ?>
+       <div class="table">
+            <div class="Id">
+                <h1>ID </h1>
+                <div class="ligne2"style='display: flex;
+                    height: 2px;background-color: #000;'>
+                </div>
+                <?php
+                    if($alluser->rowCount()>0){
+                        while($r_user = $alluser->fetch()){
+                            ?>
+                            <P><?= $r_user['idParent'];?><div class="ligne2" style='display: flex;
+                                height: 2px;background-color: #000;'></div>
+                            </P>
+                            
+                            <?php
+                        }
+                    }else {
+                        ?>
+                        <p>vide</p>
+                        <?php
+                    }
+                ?>
+            </div>
+            <div class="nom">
+                <h1>Nom </h1>
+                <div class="ligne2"style='display: flex;
+                    height: 2px;background-color: #000;'>
+                </div>
+                <?php
+                     $alluser1 = $bdd->query('SELECT * FROM parent ORDER BY idParent ');
+                     if(isset($_GET['s']) AND !empty($_GET['s']) ){
+                         $recherche = htmlspecialchars($_GET['s']);
+                         $alluser1 = $bdd->query('SELECT * FROM parent WHERE nom LIKE"%'.$recherche.'%" 
+                         OR prénom LIKE"%'.$recherche.'%" ORDER BY idParent ');
+                     }
+                 
+                    if($alluser1->rowCount()>0){
+                        while($r_userS = $alluser1->fetch()){
+                            ?>
+                            <P> <?= $r_userS['nom'];?> <?= $r_userS['prénom'];?>
+                                <div class="ligne2" style='display: flex;
+                                height: 2px;background-color: #000;'></div>
+                            </P>
+                            <?php
+                        }
+                    }else {
+                        ?>
+                        <p>vide</p>
+                        <?php
+                    }
+                ?>
+            </div>
+            <div class="bannir">
+                <h1>Bannir </h1>
+                <div class="ligne2"style='display: flex;
+                    height: 2px;background-color: #000;'>
+                </div>
+                <?php
+                     $alluser2 = $bdd->query('SELECT * FROM parent ORDER BY idParent ');
+                     if(isset($_GET['s']) AND !empty($_GET['s']) ){
+                         $bannir = htmlspecialchars($_GET['s']);
+                         $alluser2 = $bdd->query('SELECT * FROM parent WHERE nom LIKE"%'.$bannir.'%" OR 
+                         prénom LIKE"%'.$bannir.'%" ORDER BY idParent ');
+                     }
+                 
+                    if($alluser2->rowCount()>0){
+                        while($r_user2 = $alluser2->fetch()){
+                            ?>
+                            <P> <a href="bannir.php?idParent=<?= $r_user2['idParent'];?>" style="color:red;
+                            text-decoration: none;"> Bannir le membre</a>
+                            <div class="ligne2" style='display: flex;
+                                height: 2px;background-color: #000;'></div>
+                            </P>
+                            <?php
+                        }
+                    }else {
+                        ?>
+                        <p>vide</p>
+                        <?php
+                    }
+                ?>
+            </div>
         </div>
+        <div class="bout">
+        <a href="inscription.php"style="color:black;
+        text-decoration:none;"> Ajouter un untilisateur</a>
+        </div>
+        
     </div>
 
     <footer>
