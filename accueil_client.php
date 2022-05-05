@@ -1,3 +1,25 @@
+<?php 
+require "PHP/config.php";
+session_start();
+$idcompte = $_SESSION['APP']['numero'];
+$resultat = mysqli_query($link,"SELECT nom FROM parent WHERE idParent = '".$idcompte."'");
+$row = mysqli_fetch_array($resultat, '1');
+$nom = $row['nom'];
+
+$resultat = mysqli_query($link,"SELECT prénom FROM parent WHERE idParent = '".$idcompte."'");
+$row = mysqli_fetch_array($resultat, '1');
+$prenom = $row['prénom'];
+
+$resultat = mysqli_query($link,"SELECT nombre_de_patient FROM parent WHERE idParent = '".$idcompte."'");
+$row = mysqli_fetch_array($resultat, '1');
+$nbenfants = $row['nombre_de_patient'];
+
+if(isset($_POST['deconnexion'])){
+    $_SESSION['APP']['numero'] = null;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +54,7 @@
                 <div class="connect"><a href="connexion.php" >connexion</a></div>
                 
             </div>
-            <button><a href="connexion.php"> Connexion</a></button>
+            <button><a href="connexion.php" type="submit" name="deconnexion" value="deconnexion"> déconnexion</a></button>
         </nav>
     </header>
 
@@ -41,14 +63,9 @@
             <div class="categories_left">
                 <h1>Données médicales mesurées</h1>
                     <p>
-                        In sententia agendae rei
-                        ut quadrigis, ad applicationem enucleare ducimur
-                        textus. Ad hoc primum propositum est definiendum, i.e.
-                        functiones quam applicationes nostras debebunt providere, habita ratione
-                        fatalibus nobis datis. Tunc consilium eligemus faciendo
-                        ex intentione applicationis nostrae ac denique technologiae interretialem eligendi habebimus
-                        uti ad nostram applicationem aedificandam. In sequentibus, opus nostrum explicandum erit
-                        delectu technologiarum interretialium necnon applicationis architecturae telae huius incepti.
+                        nom: <?php echo $nom ?> <br>
+                        prénom : <?php echo $prenom  ?> <br>
+                        nombre d'enfants : <?php echo $nbenfants  ?> <br>
                     </p>
                     <a href="#" class="brn">Une question ?</a>
             </div>

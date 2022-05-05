@@ -24,7 +24,14 @@ if(isset($_POST['connexion'])){
                 if(mysqli_num_rows($Requete) == 0) {
                     echo "Le pseudo ou le mot de passe est incorrect, le compte n'a pas été trouvé.";
                 } else {
+                    $resultat = mysqli_query($link,"SELECT idParent FROM parent WHERE email = '".$email."' AND mot_de_passe = '".md5($mot_de_passe)."'");
+                    $row = mysqli_fetch_array($resultat, '1');
+                    $idcompte = $row['idParent'];
+                    echo $idcompte;
+                    $_SESSION['APP']['numero'] = $idcompte;
+                    echo $_SESSION['APP']['numero'];
                     echo "Vous êtes à présent connecté !";
+                    header('Location: accueil_client.php');
                 }
             }
         }

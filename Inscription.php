@@ -42,6 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if ($statement->execute()) {
                 print "incription fini";
+                header('Location: connexion.php');
             } else {
                 print $link->error;
             }
