@@ -86,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <a href="P_faq.html">FAQ</a>
                 <a href="">Application Ludique</a>
                 <a href="Profil.html">Mon compte</a>
-                <div class="connect"><a href="connexion.php">connexion</a></div>
+                <div class="connect"><a href="connexion.php">Connexion</a></div>
 
             </div>
             <button><a href="connexion.php"> Connexion</a></button>
@@ -129,7 +129,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
     <footer>
         <a href="P_nousContacter.php">Nous contacter</a>
-        <a href="">Mentions légales</a>
+        <a href="mentions_légales.html">Mentions légales</a>
         <a href="">&copy;INFINITE MEASURE</a>
     </footer>
     <script src="app.js"></script>

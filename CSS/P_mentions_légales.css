@@ -1,0 +1,38 @@
+
+.separation{
+
+    height: 2px;
+    background-color:rgb(76, 134, 209);;
+}
+h1 {
+    text-align: center;
+}
+p {
+    text-align: justify;
+}
+
+.contenu{
+    flex:1 0 auto;
+    min-height: 100%;
+    position: relative;
+    margin:3%;
+}
+.form-page{
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.form-title{
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+    border-radius: 10px; 
+    opacity: 0.92;
+    width: 85%; 
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
