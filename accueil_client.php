@@ -15,7 +15,7 @@ $row = mysqli_fetch_array($resultat, '1');
 $nbenfants = $row['nombre_de_patient'];
 
 if(isset($_POST['deconnexion'])){
-    $_SESSION['APP']['numero'] = null;
+    session_destroy();
 }
 
 ?>
@@ -65,9 +65,8 @@ if(isset($_POST['deconnexion'])){
                     <p>
                         nom: <?php echo $nom ?> <br>
                         prénom : <?php echo $prenom  ?> <br>
-                        nombre d'enfants : <?php echo $nbenfants  ?> <br>
                     </p>
-                    <a href="#" class="brn">Une question ?</a>
+                    <button><a href="profil.php" type="submit" name="infos" value="infos"> informations du compte </a></button>
             </div>
             <div class="categories_right">
                 <article class="category">
