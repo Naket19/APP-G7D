@@ -105,25 +105,13 @@
             
         </p>
     </div></div>
-    <div class="titreutilisateurs">
-        <h1 class="titreutil">NOTRE ÉQUIPE </h1> <br>
-        <div class="utilisateurs">
-        <p> <h3><img src="image/patricia.jpeg" alt=""><br> Patricia CONDE-CESPEDES <br>Directrice Technique</h3>
-          
-        </p>
-        <p><h3><img src="image/Ammar.jpeg" alt="" width="175" height="175"> <br> Ammar KHEIRBEK  <br> CEO </h3>
-             
-        </p>
-        <p><h3><img src="image/njima.jpeg" alt=""> <br> Wafa NJIMA <br>Directrice communication</h3>
-            
-        </p>
-    </div>
+
     
     <div class="histoire">
         <h1>NOTRE HISTOIRE</h1> <br>
         L'entreprise Infinite Measures est née d'une association de plusieurs entrepreneurs
         à succès partageant le même objectif d'amélioration et de sécurisation de tâches du quotidien
-        et quoi de mieux que de protéger les générations futures 7achounyimek <br><br>
+        et quoi de mieux que de protéger les générations futures.<br><br>
 
 
     </div>
