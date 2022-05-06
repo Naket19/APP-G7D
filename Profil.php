@@ -68,7 +68,7 @@ if(isset($_POST['deconnexion'])){
                 <div class="connect"><a href="connexion.php">Connexion</a></div>
 
             </div>
-            <button style='background:rgb(101, 137, 244); padding:5px;
+            <button style='background:rgb(101, 137, 244); padding:15px;
                 border: rgba(48, 48, 48, 0.5) solid 2px;
                 box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);'
             ><a href="connexion.php" style='text-decoration:none;color:black;'> Déconnexion</a></button>
