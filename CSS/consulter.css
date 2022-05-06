@@ -64,71 +64,19 @@ nav button a {
 .connect{
     display:none;
 }
-.b_connect a {
-    text-decoration: none;
-    color: black;
-}
 
-/* contenu  */
-.tableau_bord {
-    display: flex;
-    flex-direction: column;
-    background-color: aliceblue;
-    margin: 5%;
-    padding: 3%;
-    border-radius: 15px;
+/* contenu */
+.info{
+    background: rgba(214, 217, 226, 0.596);
+    background-size: cover;
+    padding: 4%;
+    border-radius: 10px;
+    margin:4% ;
 }
-form {
-    display: flex;
-    justify-content: center;
+.info h1{
+    font-size: 40px;
 }
-form input{
-    margin: 3px;
-}
-form input{
-    border-radius: 5px;
-    border:black solid 2px;
-    height: 40px;
-}
-.table{
-    display: flex;
-    flex-direction: row;
-    height: 250px;
-    border: solid 3px;
-    margin-top: 5%;
-    overflow: auto;
-}
-.ligne1{
-    display: flex;
-    width: 3px;
-    background-color: #000;
-    margin: 8px;
-    height: 200px;
-    
-}
-.ligne2{
-    display: flex;
-    height: 2px;
-    background-color: #000;
-    width: 210px;
-}
-.nom{
-    border: solid 2px;
-}
-.Id{
-    border: solid 2px;
-}
-.Id p {
-    padding-left: 10px;
-}
-
-.bannir{
-    border: solid 2px;
-}
-.consulter{
-    border: solid 2px;
-}
-.bout{
+.capteur{
     text-decoration: none;
     padding: 10px;
     width: 200px;
@@ -138,10 +86,8 @@ form input{
     border: rgba(48, 48, 48, 0.5) solid 2px;
     box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
 }
-  
 
-/* bas de page */
-
+/* BAS de page  */
 footer{
     display: flex;
     justify-content: space-between;
@@ -162,26 +108,10 @@ footer a{
     align-items: center;
     padding-right: 20px;
     padding-left: 20px;
-}
-
-@media screen and (min-width:1024px) {
+} 
+@media screen and (max-width:720px) {
     footer{
-        position: relative;
-    }
-    .table{
-        width: 857px;
-        margin: 2% auto;
-    }
-    .bout{
-        margin-top: 2%;
-    }
-    .tableau_bord{
-        margin: 2%;
+        position: absolute;
     }
     
 }
-@media screen and (max-width:625px) {
-    footer a{
-        font-size: 14px;
-    }
- }

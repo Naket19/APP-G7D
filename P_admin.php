@@ -38,13 +38,14 @@
                 <a href="P_admin.php">Tableau de bord</a>
                 <a href="Inscription.php">Inscription</a>
                 <a href="Profil.html">Mon compte</a>
-                <div class="connect"><a href="connexion.php" >connexion</a></div>
+                <div class="connect"><a href="connexion.php" >Déconnexion</a></div>
                 
             </div>
-            <button><a href="connexion.php"> Connexion</a></button>
+            <div class='b_connect'><a href="connexion.php"> Déconnexion</a></div>
         </nav>
     </header>
     <div class="tableau_bord">
+        <h1 style='text-align:center;font-size:32px'> Tableau de bord </h1>
         <div class="barre_recherche">
             <form method="GET">
                 <input type="search" name="s" placeholder="recherche un utilisateur">
@@ -56,7 +57,7 @@
         </div>
        <div class="table">
             <div class="Id">
-                <h1>ID </h1>
+                <h1> ID </h1>
                 <div class="ligne2"style='display: flex;
                     height: 2px;background-color: #000;'>
                 </div>
@@ -136,6 +137,36 @@
                     }
                 ?>
             </div>
+            <div class="consulter">
+                <h1>Consulter </h1>
+                <div class="ligne2"style='display: flex;
+                    height: 2px;background-color: #000;'>
+                </div>
+                <?php
+                     $alluser2 = $bdd->query('SELECT * FROM parent ORDER BY idParent ');
+                     if(isset($_GET['s']) AND !empty($_GET['s']) ){
+                         $bannir = htmlspecialchars($_GET['s']);
+                         $alluser2 = $bdd->query('SELECT * FROM parent WHERE nom LIKE"%'.$bannir.'%" OR 
+                         prénom LIKE"%'.$bannir.'%" ORDER BY idParent ');
+                     }
+                 
+                    if($alluser2->rowCount()>0){
+                        while($r_user2 = $alluser2->fetch()){
+                            ?>
+                            <P> <a href="consulter.php?idParent=<?= $r_user2['idParent'];?>" style="color:red;
+                            text-decoration: none;"> consulter le profil</a>
+                            <div class="ligne2" style='display: flex;
+                                height: 2px;background-color: #000;'></div>
+                            </P>
+                            <?php
+                        }
+                    }else {
+                        ?>
+                        <p>vide</p>
+                        <?php
+                    }
+                ?>
+            </div>
         </div>
         <div class="bout">
         <a href="inscription.php"style="color:black;
@@ -146,7 +177,7 @@
 
     <footer>
         <a href="P_nousContacter.php">Nous contacter</a>
-        <a href="">Mentions légales</a>
+        <a href="mentions_légales.html">Mentions légales</a>
         <a href="">&copy;INFINITE MEASURE</a>
     </footer>
     <script src="app.js"></script>
