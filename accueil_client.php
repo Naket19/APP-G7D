@@ -58,7 +58,7 @@ if(isset($_POST['deconnexion'])){
             style='background:rgb(101, 137, 244); padding:15px;
                 border: rgba(48, 48, 48, 0.5) solid 2px;
                 box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);'
-            ><a href="connexion.php" type="submit" name="deconnexion" value="deconnexion"> déconnexion</a></button>
+            ><a href="connexion.php" type="submit" name="deconnexion" value="deconnexion" style="color:black"> Déconnexion</a></button>
         </nav>
     </header>
 
@@ -67,10 +67,10 @@ if(isset($_POST['deconnexion'])){
             <div class="categories_left">
                 <h1>Données médicales mesurées</h1>
                     <p>
-                        nom: <?php echo $nom ?> <br>
-                        prénom : <?php echo $prenom  ?> <br>
+                        Nom: <?php echo $nom ?> <br>
+                        Prénom : <?php echo $prenom  ?> <br>
                     </p>
-                    <button><a href="profil.php" type="submit" name="infos" value="infos"> informations du compte </a></button>
+                    <button style="background:rgb(101, 137, 244); padding:15px;border: rgba(48, 48, 48, 0.5) solid 2px;box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25); border-radius: 10px"><a href="profil.php" type="submit" name="infos" value="infos" style="text-decoration:none; color:black; font-family:Poppins"> Informations du compte </a></button>
             </div>
             <div class="categories_right">
                 <article class="category">

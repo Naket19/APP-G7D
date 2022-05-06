@@ -44,7 +44,7 @@
             <div class="acc-menu">
                 <a href="P_admin.php">Tableau de bord</a>
                 <a href="Inscription.php">Inscription</a>
-                <div class="connect"><a href="connexion.php">connexion</a></div>
+                <div class="connect"><a href="connexion.php">Connexion</a></div>
                 
             </div>
             <button style='background:rgb(101, 137, 244); padding:15px;

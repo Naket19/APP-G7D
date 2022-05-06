@@ -56,15 +56,15 @@
     <div class="presentation">
         <img src="image/femme sur son PC.webp" alt="">
         <div class="avantage">
-            <p><li>Surveiller votre bébé
+            <p style="text-align: justify"><li>Surveiller votre bébé
             <br> Monitor vestri infantem scriptor
              parametri diversis etiam procul</li>
         </p>
-        <p> <li> Communiquer avec le corps médical
+        <p style="text-align: justify"> <li> Communiquer avec le corps médical
             <br>Communicare cum medicinae professione
             etiam remotius ad omnium commodum</li>
         </p>
-        <p> <li> Un système d'alerte en temps réel
+        <p style="text-align: justify"> <li> Un système d'alerte en temps réel
             <br>Optimize vestri infantem scriptor maneat
             sana cum relinquere infantem</li>
         </p>
@@ -91,7 +91,7 @@
 
     </div>
     <div class="imgmaternité">
-        <img src="image/maternité.jpg" alt="" width="900" height="500">
+        <img src="image/maternité.jpg" alt="" width="900" height="500" style="border-radius: 14px">
 
     </div>
     </div>
@@ -112,9 +112,9 @@
     
     <div class="histoire">
         <h1>NOTRE HISTOIRE</h1> <br>
-        L'entreprise Infinite Measures est née d'une association de plusieurs entrepreneurs
+        <p style="text-align: justify; margin: auto 40px">L'entreprise Infinite Measures est née d'une association de plusieurs entrepreneurs
         à succès partageant le même objectif d'amélioration et de sécurisation de tâches du quotidien
-        et quoi de mieux que de protéger les générations futures.<br><br>
+        et quoi de mieux que de protéger les générations futures.</p><br>
 
 
     </div>
