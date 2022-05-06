@@ -103,7 +103,7 @@ form input{
 .table{
     display: flex;
     flex-direction: row;
-    height: 250px;
+    height: 272px;
     border: solid 3px;
     margin-top: 5%;
     overflow: auto;

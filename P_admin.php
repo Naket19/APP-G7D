@@ -174,16 +174,16 @@
         </div>
         <div class="bout">
         <a href="inscription.php"style="color:black;
-        text-decoration:none;"> Ajouter un untilisateur</a>
+        text-decoration:none;"> Ajouter un utilisateur</a>
         </div>
         
     </div>
 
-    <footer>
+    <!-- <footer>
         <a href="P_nousContacter.php">Nous contacter</a>
         <a href="mentions_légales.html">Mentions légales</a>
         <a href="">&copy;INFINITE MEASURE</a>
-    </footer>
+    </footer> -->
     <script src="app.js"></script>
 </body>
 </html>

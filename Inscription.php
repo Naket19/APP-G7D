@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($statement->execute()) {
                 echo "c'est bon";
                 mail($email, $sujet, $corp, $headers);
-                header('Location: connexion.php');
+                header('Location: P_admin.php');
             } else {
                 print $link->error;
             }
@@ -86,8 +86,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-    <header>
-
+<header>
+        
         <nav>
             <img src="image/logo_infinte_measure.png" alt="">
             <div class="toggle">
@@ -95,13 +95,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <i class="fa-solid fa-circle-xmark fermer"></i>
             </div>
             <div class="acc-menu">
-                <a href="Index.php">Accueil</a>
-                <a href="">Données Capteurs</a>
-                <a href="P_faq.html">FAQ</a>
-                <a href="">Application Ludique</a>
+                <a href="P_admin.php">Tableau de bord</a>
+                <a href="Inscription.php">Inscription</a>
                 <a href="Profil.html">Mon compte</a>
-                <div class="connect"><a href="connexion.php">Connexion</a></div>
-
+                <div class="connect"><a href="connexion.php" >Déconnexion</a></div>
+                
             </div>
             <button style='background:rgb(101, 137, 244); padding:15px;
                 border: rgba(48, 48, 48, 0.5) solid 2px;
@@ -141,11 +139,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </form>
     </div>
-    <footer>
+    <!-- <footer>
         <a href="P_nousContacter.php">Nous contacter</a>
         <a href="mentions_légales.html">Mentions légales</a>
         <a href="">&copy;INFINITE MEASURE</a>
-    </footer>
+    </footer> -->
     <script src="app.js"></script>
 </body>
 

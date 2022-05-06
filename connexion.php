@@ -112,7 +112,7 @@ if(isset($_POST['connexion'])){
             <div class="bout-connect">
                 <button type="submit" name="connexion" value="connexion">Se connecter</button>
             </div>
-            <p>Si vous n'avez pas de compte, aller dans la section nous contacter en base de la page pour faire une demande de création de compte.</p>
+            <!-- <p>Si vous n'avez pas de compte, aller dans la section nous contacter en base de la page pour faire une demande de création de compte.</p> -->
         </div>
     </div>
     <footer>

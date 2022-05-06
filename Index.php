@@ -78,14 +78,14 @@
     
 
     <div class="produit">
-        <p><li>UN BOÎTIER
+        <p style="text-align: justify"><li>UN BOÎTIER
             <br> Composé de plusieurs capteurs de <br> tous  types afin de 
             s'assurer du bien-être de votre enfant à tous les niveaux</li>
         </p>
-        <p><li>UNE PLATEFORME
+        <p style="text-align: justify"><li>UNE PLATEFORME
             <br> Permetant d'acceder aux données de vos enfants à chaque instant </li>
         </p>
-        <p><li>UN LIEN
+        <p style="text-align: justify"><li>UN LIEN
             <br> Permettant de rapprocher les parents des enfants</li>
         </p>
 

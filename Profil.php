@@ -83,8 +83,6 @@ if(isset($_POST['deconnexion'])){
                 </div>
             </div>
             <div class="profil">
-                <div class="circle">
-                </div>
                 <div class="encadrer">
                     Type:
                 </div>
@@ -100,7 +98,7 @@ if(isset($_POST['deconnexion'])){
                     Prénom: <?php echo $prenom ?>
                 </div>
                 <div class="encadrer">
-                    Nb de patients : <?php echo $nbpatients ?>
+                    Nombre d'enfants : <?php echo $nbpatients ?>
                 </div>
                 <div class="encadrer">
                     Adresse: <?php echo $adresse ?>
