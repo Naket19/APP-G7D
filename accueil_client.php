@@ -46,7 +46,7 @@ if(isset($_POST['deconnexion'])){
                 <i class="fa-solid fa-circle-xmark fermer"></i>
             </div>
             <div class="acc-menu">
-                <a href="Index.html">Accueil</a>
+                <a href="Index.php">Accueil</a>
                 <a href="">Données Capteurs</a>
                 <a href="P_faq.html">FAQ</a>
                 <a href="">Application Ludique</a>
