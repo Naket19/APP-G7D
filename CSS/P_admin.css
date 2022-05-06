@@ -82,10 +82,20 @@ form {
     display: flex;
     justify-content: center;
 }
-form input{
-    margin: 3px;
+.barre{
+    width: 250px;
+}
+.b_envoie{
+    text-decoration: none;
+    padding: 6px;
+    width: 70px;
+    text-align: center;
+    background-color: rgb(101, 137, 244);
+    border: rgba(48, 48, 48, 0.5) solid 2px;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
 }
 form input{
+    margin: 3px;
     border-radius: 5px;
     border:black solid 2px;
     height: 40px;
@@ -178,10 +188,19 @@ footer a{
     .tableau_bord{
         margin: 2%;
     }
-    
+    .barre{
+        width: 450px;
+    }
+
 }
 @media screen and (max-width:625px) {
     footer a{
         font-size: 14px;
+    }
+ }
+
+ @media screen and (max-width:1023px) {
+    .open .b_connect{
+        display: none;
     }
  }

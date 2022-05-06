@@ -41,15 +41,19 @@
                 <div class="connect"><a href="connexion.php" >Déconnexion</a></div>
                 
             </div>
-            <div class='b_connect'><a href="connexion.php"> Déconnexion</a></div>
+            <button style='background:rgb(101, 137, 244); padding:5px;
+                border: rgba(48, 48, 48, 0.5) solid 2px;
+                box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);'
+            ><a href="connexion.php" style='text-decoration:none;color:black;'> Déconnexion</a></button>
         </nav>
     </header>
     <div class="tableau_bord">
         <h1 style='text-align:center;font-size:32px'> Tableau de bord </h1>
         <div class="barre_recherche">
             <form method="GET">
-                <input type="search" name="s" placeholder="recherche un utilisateur">
-                <input type="submit"name="envoyer">
+                <input class= 'barre'type="search" name="s" placeholder="recherche un utilisateur">
+                <input class='b_envoie' type="submit"name="envoyer">
+
             </form>
             <div class="afficher_utilisateur">
     
