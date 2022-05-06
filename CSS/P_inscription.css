@@ -4,6 +4,7 @@ body{
     background-size: cover;
     margin: 0;
     flex-direction: column;
+    font-family: 'poppins';
 }
 
 /* haut de page  */
