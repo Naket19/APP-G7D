@@ -1,0 +1,301 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body{
+  color: black;
+  }
+
+  header{
+    /* background: rgb(174, 162, 162); */
+    background: url(../image/back-ecriture.png);  
+}
+
+nav{
+    align-items: center; 
+    margin-left: 3%;
+    display: inline-flex;
+    justify-content: space-between;
+    width: 90%;
+    height: 97px;
+    
+}
+nav button{
+    padding: 8px;
+    border-radius: 10px;
+    
+}
+.acc-menu a {
+   
+    justify-content: space-between;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    align-items: center;
+    padding: 32px;
+
+}
+nav img{
+    display: inline-flex;
+    width: 80px;
+    height: 10vh;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.acc-menu a:hover{
+    background: rgb(237, 238, 241);
+    color: black;
+}
+
+nav button a {
+    text-decoration: none;
+}
+.connexion{
+    display: none;
+}
+.toggle{
+    display:none;
+}
+.connect{
+    display:none;
+}
+
+.acc-menu a {
+   
+    justify-content: space-between;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    align-items: center;
+    padding: 32px;
+
+}
+nav img{
+    display: inline-flex;
+    width: 80px;
+    height: 10vh;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+  
+  .container{
+  display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 1.5fr 1.5fr 0.5fr;
+    grid-template-areas:
+      "header header header header"
+      "sidebar main main main"
+      "sidebar main main main"
+      "sidebar main main main";
+  }
+  
+  header{
+    grid-area: header;
+    position: relative;
+      height: 100px;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 20px 2%;
+      background-color: url(../image/back-ecriture.png);  
+      z-index: 1;
+      }
+      main {
+        position: relative;
+        background: rgb(241, 240, 240);
+        grid-area: main;
+        
+      }   
+      #sidebar {
+        position: relative;
+        grid-area: sidebar;
+        background: #f5f3f3;
+      }  
+    
+
+    
+
+  .noms_onglets{
+  position: absolute;
+  top: 2.5vh;
+  margin: 2.5vh;
+
+  
+        
+  }
+
+    
+  .contenu {
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  height: 74vh;
+  width: 60vw;
+  background-color: #fbfbfb;
+  opacity: 0;
+  border-radius: 10px;
+  /*box-shadow: 0 15px 50px rgba(0,0,.2);*/
+  padding: 10px;
+  color: url(../image/back-ecriture.png);
+  }
+  
+  
+  .contenu h3 {
+    padding: 20px;
+  }
+  .contenu hr {
+    width: 20%;
+    height: 2px;
+    margin-left: 20px;
+    background: #738386;
+    border: none;
+  }
+  .contenu h2{
+  margin-top: 2vh;
+  font-size: 28px;
+  }
+  .contenu p1{
+  font-size: 20px;
+  }
+  #sidebar h1{
+  position: absolute;
+  font-size: 2.2vh;
+  margin-left: 0.5vw;    
+  font-weight: 1000;
+  height: 3vh;
+  width: 14vw;
+  }
+  #sidebar p{
+  position: absolute;
+  top: 1vh;
+  margin-left: 0.5vw;
+  font-size: 2vh;
+  
+  }
+    
+  .active {
+  transition: all 0.2s ease;
+  
+  }
+    
+  .activeContenu {
+    animation: fade 0.3s forwards;
+  
+  }
+  
+  
+  
+  .container{
+   
+    max-width: 2000px;
+    font-family: "Quicksand";
+  
+  }
+  
+  
+  @keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+  }
+  .ongletInactif{
+    position: relative;
+    height: 10vh;
+    width: 16vw;
+    border-radius: 10px;
+    display: flex;
+    background: url(../image/back-ecriture.png);
+    z-index: 3;
+   
+  
+  }
+  .ongletInactif:hover{
+  color:#ced6d8;
+  background: rgb(216, 137, 137);
+  }
+  .bis{
+  margin-top: 7vh;
+  }
+  .imgStat{
+  width: 250px;
+  height: 250px;
+  background: url(https://www.haas-avocats.com/wp-content/uploads/2017/08/statistique-google-haas-avocats-300x168.jpg);
+  background-size: 100% 100%;
+  border-radius: 50%;
+  float: left;
+  shape-outside: circle();
+  margin: 10px;
+  
+  
+  }
+  
+  
+  
+  
+  
+  
+  /*Responsive*/
+  
+  @media only screen and (max-width: 1050px) {
+  .container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 0.6fr 2fr;
+    grid-template-areas:
+      "header header header header"
+      "sidebar sidebar sidebar sidebar"
+      "main main main main"
+      ;
+  }
+  .noms_onglets{
+    display: flex;
+    flex-direction: row;
+  }
+  .bis{
+    margin-top: 0vh;
+  }
+  .ongletInactif{
+    width: 23vw;
+    border: solid grey 1px;
+  }
+  #sidebar h1{
+    font-size: 14px;
+  }
+  #sidebar p{
+    font-size: 12px;
+  }
+  .contenu {
+    width: 80vw;
+  
+  }
+  }
+  
+  
+  
+  
+  .footerContent{
+  
+  max-width: 2000px;
+  margin:20px;
+  font-family: "Quicksand";
+  
+  }
+  .row{
+  flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  }
+  ul{
+  list-style:none;
+  }
+  
