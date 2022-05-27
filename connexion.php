@@ -1,9 +1,6 @@
 <?php
 require "PHP/config.php";
-session_start();
-
-
-
+$link = DbConnect();
 if(isset($_POST['connexion'])){
     $email = $_POST["email"];
     $mot_de_passe = $_POST["mot_de_passe"];
@@ -20,16 +17,23 @@ if(isset($_POST['connexion'])){
             if(!$link){
                 echo "Erreur de connexion à la base de données.";
             } else {
-                $Requete = mysqli_query($link,"SELECT * FROM parent WHERE email = '".$email."' AND mot_de_passe = '".md5($mot_de_passe)."'");
-                if(mysqli_num_rows($Requete) == 0) {
+                $Requete = $link->prepare("SELECT * FROM utilisateur WHERE email = :email AND mot_de_passe = :mot_de_passe");
+                $Requete->execute(array('email'=> $email,'mot_de_passe'=>$mot_de_passe));
+                $resultat = $Requete->fetch();
+                if(!$resultat) {
                     echo "Le pseudo ou le mot de passe est incorrect, le compte n'a pas été trouvé.";
                 } else {
-                    $resultat = mysqli_query($link,"SELECT idParent FROM parent WHERE email = '".$email."' AND mot_de_passe = '".md5($mot_de_passe)."'");
-                    $row = mysqli_fetch_array($resultat, '1');
-                    $idcompte = $row['idParent'];
-                    echo $idcompte;
-                    $_SESSION['APP']['numero'] = $idcompte;
-                    echo $_SESSION['APP']['numero'];
+                    session_start();
+                    $_SESSION['nom'] = $resultat['nom'];
+                    $_SESSION['prénom'] = $resultat['prénom'];
+                    $_SESSION['email'] = $email;
+                    
+
+                    //$row = mysqli_fetch_array($resultat, '1');
+                    //$idcompte = $row['idUser'];
+                    //echo $idcompte;
+                    //$_SESSION['APP']['numero'] = $idcompte;
+                    //echo $_SESSION['APP']['numero'];
                     echo "Vous êtes à présent connecté !";
                     header('Location: accueil_client.php');
                 }

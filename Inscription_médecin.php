@@ -1,6 +1,7 @@
 <?php
 
 require "PHP/config.php";
+$link = DbConnect();
 
 //Verification des champs
 function Genere_Password($size)
@@ -27,6 +28,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $adresse = $_POST["adresse"];
     $mot_de_passenc= Genere_Password(12);
     $mot_de_passe = md5($mot_de_passenc);
+    $médecin="médecin";
+    $hopital = $_POST["hopital"];
     $sujet = " Informations de connexion à la plateforme";
     $corp = "Bonjour $nom $prénom, Voici vos informations de connexion pour votre compte chez infinite measures : E-mail de connexion : $email  Mot de passe : $mot_de_passenc ";
     $headers ="";
@@ -39,21 +42,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Veuillez ecrire le prénom seulent en lettre minuscile et majuscule";
         } elseif (!preg_match('/[1-9]+$/', trim($_POST['nombre_de_patient']))) {
             echo "Veuillez indiquer combien d'enfant sont a la charge";
-        } elseif (!filter_var(trim($_POST['email']), FILTER_VALIDATE_EMAIL)) {
+        } elseif (!filter_var(trim($_POST['email']), FILTER_VALIDATE_EMAIL)) {           
             echo filter_var(trim($_POST['email']), FILTER_VALIDATE_EMAIL);
             echo "Veuillez ecrire un mail valide";
-        } elseif (!preg_match('/[0-9]{10}+$/', trim($_POST['téléphone']))) {
+        }           
+        elseif (!preg_match('/[0-9]{10}+$/', trim($_POST['téléphone']))) {
             echo "Veuillez indiquer un numéro de téléphone valide";
         } else {
-
             if ($link->connect_error) {
                 die('Error : (' . $link->connect_errno . ') ' . $link->connect_error);
-            }
+           }
+            $statement = $link->prepare("INSERT INTO utilisateur (nom, prénom, nombre_de_patient, email, téléphone, adresse, mot_de_passe, userType, idHopital) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            $result =$statement->execute( [$nom, $prénom, $nombre_de_patient, $email, $téléphone, $adresse, $mot_de_passe, $médecin, $hopital]);
 
-            $statement = $link->prepare("INSERT INTO parent (nom, prénom, nombre_de_patient, email, téléphone, adresse, mot_de_passe) VALUES(?, ?, ?, ?, ?, ?, ?)");
-            $statement->bind_param('sssssss', $nom, $prénom, $nombre_de_patient, $email, $téléphone, $adresse, $mot_de_passe);
-
-            if ($statement->execute()) {
+            if ($result) {
                 echo "c'est bon";
                 mail($email, $sujet, $corp, $headers);
                 header('Location: P_admin.php');
@@ -116,6 +118,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
         <form method="post" action="Inscription.php">
+            <div class="champ">
+                Hopital : <select name="hopital" >
+                <?php
+                    function hopital(){
+
+                        $link = DbConnect();
+                        $statement = $link->prepare("SELECT * FROM hopital");
+                        $statement->execute();
+
+                        $ans = $statement->setFetchMode(PDO::FETCH_ASSOC);
+
+                        while($state = $statement->fetch()){
+                            extract($state);
+                            echo "<option value='$idHopital'>$nom</option>";
+                        }
+                    }
+                    hopital();
+                ?>
+                </select>
+
+            </div>
             <div class="champ">
                 <br><input type="text" name="nom" class="input" placeholder="Nom">
             </div>
