@@ -1,30 +1,15 @@
 <?php 
 require "PHP/config.php";
+
 session_start();
-$idcompte = $_SESSION['APP']['numero'];
-$resultat = mysqli_query($link,"SELECT nom FROM parent WHERE idParent = '".$idcompte."'");
-$row = mysqli_fetch_array($resultat, '1');
-$nom = $row['nom'];
 
-$resultat = mysqli_query($link,"SELECT prénom FROM parent WHERE idParent = '".$idcompte."'");
-$row = mysqli_fetch_array($resultat, '1');
-$prenom = $row['prénom'];
+$nom = $_SESSION['nom'];
+$prénom = $_SESSION['prénom'];
+$mail = $_SESSION['email'];
+$adresse= $_SESSION['adresse'];
+$tel = $_SESSION['téléphone'];
+$type = $_SESSION['userType'];
 
-$resultat = mysqli_query($link,"SELECT email FROM parent WHERE idParent = '".$idcompte."'");
-$row = mysqli_fetch_array($resultat, '1');
-$mail = $row['email'];
-
-$resultat = mysqli_query($link,"SELECT téléphone FROM parent WHERE idParent = '".$idcompte."'");
-$row = mysqli_fetch_array($resultat, '1');
-$tel = $row['téléphone'];
-
-$resultat = mysqli_query($link,"SELECT adresse FROM parent WHERE idParent = '".$idcompte."'");
-$row = mysqli_fetch_array($resultat, '1');
-$adresse = $row['adresse'];
-
-$resultat = mysqli_query($link,"SELECT nombre_de_patient FROM parent WHERE idParent = '".$idcompte."'");
-$row = mysqli_fetch_array($resultat, '1');
-$nbpatients = $row['nombre_de_patient'];
 
 if(isset($_POST['deconnexion'])){
         session_destroy();
@@ -84,7 +69,7 @@ if(isset($_POST['deconnexion'])){
             </div>
             <div class="profil">
                 <div class="encadrer">
-                    Type:
+                    Type: <?php echo $type ?>
                 </div>
             </div>
             <div class="profil">
@@ -95,10 +80,7 @@ if(isset($_POST['deconnexion'])){
                     Mail: <?php echo $mail ?>
                 </div>
                 <div class="encadrer">
-                    Prénom: <?php echo $prenom ?>
-                </div>
-                <div class="encadrer">
-                    Nombre d'enfants : <?php echo $nbpatients ?>
+                    Prénom: <?php echo $prénom ?>
                 </div>
                 <div class="encadrer">
                     Adresse: <?php echo $adresse ?>

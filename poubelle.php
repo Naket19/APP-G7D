@@ -1,5 +1,5 @@
 <?php
-   $dest = "aymen2001@hotmail.fr";
+   $dest = "sefianes@ymail.com";
    $sujet = "Email de test";
    $corp = "Salut ceci est un email de test envoyer par un script PHP";
    $headers = "";
