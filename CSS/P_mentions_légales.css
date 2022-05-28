@@ -12,16 +12,20 @@ p {
 }
 
 .contenu{
-    flex:1 0 auto;
+    display: flex;
+    flex-direction: row;
+    /* flex:1 0 auto;
     min-height: 100%;
     position: relative;
-    margin:3%;
+    margin:3%; */
 }
 .form-page{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     margin-top: 2%;
     margin-bottom: 2%;
+    font-size: 19px;
 }
 
 .form-title{
@@ -30,9 +34,53 @@ p {
     background-color: aliceblue;
     border-radius: 10px; 
     opacity: 0.92;
-    width: 85%; 
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    width: 75%; 
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+    margin: 3%;
+}
+
+.barre-verticale{
+    display: flex;
+    width: 9.5%;
+    height: 82vh;
+    flex-direction: column;
+    background-color: #333;
+    margin-top: 0%;
+    margin-left: 0%;
+    color: white;
+    list-style: none;
+}
+.barre-verticale li {
+    padding: 22px;
+    font-size: 14px;
+}
+.barre-verticale li:hover{
+    background-color: white;
+    color: black;
+}
+.hebergeur{
+    display: none;
+}
+.information{
+    display: none;
+}
+.objet{
+    display: none;
+}
+.liberte{
+    display: none;
+}
+.limitation{
+    display: none;
+}
+@media screen and (max-width:800px) {
+    .form-page{
+        font-size: 15px;
+    }
+    .form-title{
+        width: 75%;
+    }
+    
 }
