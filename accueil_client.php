@@ -1,18 +1,10 @@
 <?php 
 require "PHP/config.php";
+$link = DbConnect();
 session_start();
-$idcompte = $_SESSION['APP']['numero'];
-$resultat = mysqli_query($link,"SELECT nom FROM parent WHERE idParent = '".$idcompte."'");
-$row = mysqli_fetch_array($resultat, '1');
-$nom = $row['nom'];
 
-$resultat = mysqli_query($link,"SELECT prénom FROM parent WHERE idParent = '".$idcompte."'");
-$row = mysqli_fetch_array($resultat, '1');
-$prenom = $row['prénom'];
-
-$resultat = mysqli_query($link,"SELECT nombre_de_patient FROM parent WHERE idParent = '".$idcompte."'");
-$row = mysqli_fetch_array($resultat, '1');
-$nbenfants = $row['nombre_de_patient'];
+$nom=$_SESSION['nom'];
+$prénom=$_SESSION['prénom'];
 
 if(isset($_POST['deconnexion'])){
     session_destroy();
@@ -68,7 +60,7 @@ if(isset($_POST['deconnexion'])){
                 <h1>Données médicales mesurées</h1>
                     <p>
                         Nom: <?php echo $nom ?> <br>
-                        Prénom : <?php echo $prenom  ?> <br>
+                        Prénom : <?php echo $prénom  ?> <br>
                     </p>
                     <button style="background:rgb(101, 137, 244); padding:15px;border: rgba(48, 48, 48, 0.5) solid 2px;box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25); border-radius: 10px"><a href="profil.php" type="submit" name="infos" value="infos" style="text-decoration:none; color:black; font-family:Poppins"> Informations du compte </a></button>
             </div>
