@@ -1,6 +1,6 @@
 
 .separation{
-
+    
     height: 2px;
     background-color:rgb(76, 134, 209);;
 }
@@ -9,6 +9,7 @@ h1 {
 }
 p {
     text-align: justify;
+    font-size: 17px;
 }
 
 .contenu{
@@ -22,9 +23,7 @@ p {
 .form-page{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin-top: 2%;
-    margin-bottom: 2%;
+    margin: 3%;
     font-size: 19px;
 }
 
@@ -43,7 +42,7 @@ p {
 
 .barre-verticale{
     display: flex;
-    width: 9.5%;
+    width: 15%;
     height: 82vh;
     flex-direction: column;
     background-color: #333;
@@ -75,12 +74,71 @@ p {
 .limitation{
     display: none;
 }
-@media screen and (max-width:800px) {
+
+/* bas de page */
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    flex-shrink: 0;
+    width: 100%;
+    height: 40px;
+    position:relative;
+    bottom: 0px;
+    left: 0px;
+    background: url(../image/back-ecriture.png);
+    
+}
+footer a{
+    display: inline-flex;
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    align-items: center;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+
+@media screen and (max-width:1000px) {
     .form-page{
         font-size: 15px;
     }
     .form-title{
         width: 75%;
     }
-    
+    .barre-verticale{
+        width: 25%;
+    }
+    p{
+        font-size: 14px;
+    }
+}
+@media screen and (max-width:500px) {
+    .form-page p {
+        font-size: 10px;
+    }
+    .form-page h1{
+        font-size: 12px;
+    }
+    .form-page h2{
+        font-size: 10px;
+    }
+    .barre-verticale li{
+        font-size: 8px;
+    }
+  
+    .form-title{
+
+        padding: 15px;
+    }
+    .form-page{
+        width: 40%;
+    }
+    .form-title p {
+        width: 55%;
+    }
+    footer a {
+        font-size: 9px;
+    }
 }

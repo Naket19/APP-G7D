@@ -42,13 +42,13 @@
         <div class="form-page">
             <div class="form-title">
                 <div class="text-title">
-                    <h1>Nous Contacter</h1>
+                    <h1 style="font-size:25px">Nous Contacter</h1>
                     <div class="text" align="center"> 
                         <div class="separation"></div>
-                        <h1>Pour joindre l'administrateur,
+                        <P style="font-size:17px">Pour joindre l'administrateur,
                                 merci de joindre votre email ainsi
                                 que votre demande ci-dessous : 
-                            </h1>
+                        </P>
                     </div>
                 </div>
                 <div class="formulaire">
