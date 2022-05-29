@@ -1,20 +1,8 @@
 <?php
     session_start();
-    $bdd = new PDO('mysql:host=localhost; dbname=app_g7d_infinite_measure;','root','');
-    $utilisateur_id = (int) trim($_GET['idParent']);
-    if(empty($utilisateur_id)){
-        header('Location: /P_admin.php');
-        exit;
-    }
+    
 
-    $req = $bdd->prepare("SELECT * FROM parent
-        WHERE idParent = ?");
-    $req->execute(array($utilisateur_id));
-    $voir_utilisateur = $req->fetch();
-    if(!isset($voir_utilisateur['idParent'])){
-        header('Location: /P_admin.php');
-        exit;
-    }
+  
 ?>
 
 <!DOCTYPE html>
@@ -55,15 +43,14 @@
     </header>
     <div class="info">
         <h1>Visualisation de compte</h1>
-        <p> Nom : <?= $voir_utilisateur['nom']?><br><br>
-            Prénom : <?= $voir_utilisateur['prénom']?><br><br>
-            Nombre d'enfants : <?= $voir_utilisateur['nombre_de_patient']?><br><br>
-            Téléphone : <?= $voir_utilisateur['téléphone']?><br><br>
-            Adresse : <?= $voir_utilisateur['adresse']?><br><br>
-            Adresse-électronique : <?= $voir_utilisateur['email']?><br><br>
+        <p> Nom : <?=  $_SESSION['nom']?><br><br>
+            Prénom : <?= $_SESSION['prénom']?><br><br>
+            Téléphone : <?= $_SESSION['téléphone']?><br><br>
+            Adresse : <?= $_SESSION['adresse']?><br><br>
+            Adresse-électronique : <?= $_SESSION['email']?><br><br>
         </p>
         <div class="capteur">
-        <a href="inscription.php"style="color:black;
+        <a href="donnee_capteur.php"style="color:black;
         text-decoration:none;">données des capteurs</a>
         </div>
     </div>
