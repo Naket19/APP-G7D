@@ -22,7 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $nom = $_POST["nom"];
     $prénom = $_POST["prénom"];
-    $nombre_de_patient = $_POST["nombre_de_patient"];
     $email = $_POST["email"];
     $téléphone = $_POST["téléphone"];
     $adresse = $_POST["adresse"];
@@ -33,28 +32,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sujet = " Informations de connexion à la plateforme";
     $corp = "Bonjour $nom $prénom, Voici vos informations de connexion pour votre compte chez infinite measures : E-mail de connexion : $email  Mot de passe : $mot_de_passenc ";
     $headers ="";
-    if (isset($_POST['nom'], $_POST['prénom'], $_POST['nombre_de_patient'], $_POST['email'], $_POST['téléphone'], $_POST['adresse'])) {
-        if (empty($_POST['nom']) || empty($_POST['nom']) || empty($_POST['nom']) || empty($_POST['nom']) || empty($_POST['nom']) || empty($_POST['nom']) || empty($_POST['nom']) || empty($_POST['nom'])) {
+    $stmt = $link->prepare("SELECT * FROM utilisateur WHERE email=?");
+    $stmt->execute([$email]); 
+    $validEmail = $stmt->fetch();
+
+    if (isset($_POST['nom'], $_POST['prénom'], $_POST['email'], $_POST['téléphone'], $_POST['adresse'])) {
+        if (empty($_POST['nom']) || empty($_POST['prénom']) || empty($_POST['email']) || empty($_POST['téléphone']) || empty($_POST['adresse'])) {
             echo "Veuillez remplir tous les champs";
         } elseif (!preg_match('/[a-zA-Z]+$/', trim($_POST['nom']))) {
             echo "Veuillez ecrire le nom seulent en lettre minuscile et majuscule";
         } elseif (!preg_match('/[a-zA-Z]+$/', trim($_POST['prénom']))) {
             echo "Veuillez ecrire le prénom seulent en lettre minuscile et majuscule";
-        } elseif (!preg_match('/[1-9]+$/', trim($_POST['nombre_de_patient']))) {
-            echo "Veuillez indiquer combien d'enfant sont a la charge";
         } elseif (!filter_var(trim($_POST['email']), FILTER_VALIDATE_EMAIL)) {           
             echo filter_var(trim($_POST['email']), FILTER_VALIDATE_EMAIL);
             echo "Veuillez ecrire un mail valide";
-        }           
+        }
+        elseif ($validEmail) {
+            echo "Le mail est deja utilisé";
+        }       
         elseif (!preg_match('/[0-9]{10}+$/', trim($_POST['téléphone']))) {
             echo "Veuillez indiquer un numéro de téléphone valide";
         } else {
-            if ($link->connect_error) {
-                die('Error : (' . $link->connect_errno . ') ' . $link->connect_error);
-           }
-            $statement = $link->prepare("INSERT INTO utilisateur (nom, prénom, nombre_de_patient, email, téléphone, adresse, mot_de_passe, userType, idHopital) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)");
-            $result =$statement->execute( [$nom, $prénom, $nombre_de_patient, $email, $téléphone, $adresse, $mot_de_passe, $médecin, $hopital]);
 
+            $statement = $link->prepare("INSERT INTO utilisateur (nom, prénom, email, téléphone, adresse, mot_de_passe, userType, idHopital) VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
+            $result =$statement->execute( [$nom, $prénom, $email, $téléphone, $adresse, $mot_de_passe, $médecin, $hopital]);
             if ($result) {
                 echo "c'est bon";
                 mail($email, $sujet, $corp, $headers);
@@ -144,9 +145,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <div class="champ">
                 <input type="text" name="prénom" class="input" placeholder="Prénom">
-            </div>
-            <div class="champ">
-                <input type="text" name="nombre_de_patient" class="input" placeholder="Nombre d'enfant">
             </div>
             <div class="champ">
                 <input type="text" name="email" class="input" placeholder="Adresse Mail">

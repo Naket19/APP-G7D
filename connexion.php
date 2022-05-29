@@ -27,15 +27,20 @@ if(isset($_POST['connexion'])){
                     $_SESSION['nom'] = $resultat['nom'];
                     $_SESSION['prénom'] = $resultat['prénom'];
                     $_SESSION['email'] = $email;
+                    $_SESSION['téléphone'] = $resultat['téléphone'];
+                    $_SESSION['adresse'] = $resultat['adresse'];
+                    $_SESSION['userType'] = $resultat['userType'];
                     
-
-                    //$row = mysqli_fetch_array($resultat, '1');
-                    //$idcompte = $row['idUser'];
-                    //echo $idcompte;
-                    //$_SESSION['APP']['numero'] = $idcompte;
-                    //echo $_SESSION['APP']['numero'];
                     echo "Vous êtes à présent connecté !";
-                    header('Location: accueil_client.php');
+                    if($_SESSION['userType']="parent"){
+                        header('Location: accueil_client.php');
+                    }elseif($_SESSION['userType']="médecin"){
+                        header('Location: accueil_client.php');
+
+                    }elseif($_SESSION['userType']="admin"){
+                        header('Location: P_admin.php');
+
+                    }            
                 }
             }
         }
