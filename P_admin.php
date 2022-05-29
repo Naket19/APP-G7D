@@ -7,7 +7,10 @@
         $alluser = $bdd->query('SELECT * FROM utilisateur WHERE nom LIKE"%'.$recherche.'%"
         OR prénom LIKE"%'.$recherche.'%" ORDER BY idUser ');
     }
+    
+    $arrayUser= array();
 
+    
 ?>
 
 <!DOCTYPE html>
@@ -69,11 +72,13 @@
                     if($alluser->rowCount()>0){
                         while($r_user = $alluser->fetch()){
                             ?>
+                            
                             <P><?= $r_user['idUser'];?><div class="ligne2" style='display: flex;
                                 height: 2px;background-color: #000;'></div>
                             </P>
                             
                             <?php
+                            $arrayUser[]=$r_user['idUser'];
                         }
                     }else {
                         ?>
@@ -154,20 +159,21 @@
                          prénom LIKE"%'.$bannir.'%" ORDER BY idUser ');
                      }
                  
-                    if($alluser2->rowCount()>0){
-                        while($r_user2 = $alluser2->fetch()){
-                            ?>
-                            <P> <a href="consulter.php?idUser=<?= $r_user2['idUser'];?>" style="color:red;
-                            text-decoration: none;"> consulter le profil</a>
-                            <div class="ligne2" style='display: flex;
-                                height: 2px;background-color: #000;'></div>
-                            </P>
-                            <?php
+                    if($alluser2->rowCount()>0)
+                    {
+                        $i=0;
+                        while($r_user2 = $alluser2->fetch())
+                        {
+                            echo '<a href="consulter.php?idUser= '.$arrayUser[$i].'" style="color:red; text-decoration: none;"><p> consulter le profil</a></p>';
+                            echo '<div class="ligne2" style="display: flex; height: 2px;background-color: #000;"></div>';
+                            $i++;
+                            
+                             
                         }
                     }else {
-                        ?>
-                        <p>vide</p>
-                        <?php
+                        
+                        echo '<p>vide</p>';
+                        
                     }
                 ?>
             </div>
@@ -175,6 +181,7 @@
         <div class="bout">
         <a href="inscriptionParent.php"style="color:black;
         text-decoration:none;"> Ajouter un utilisateur</a>
+        
         </div>
         
     </div>

@@ -1,12 +1,15 @@
 <?php
     session_start();
-    $bdd = new PDO('mysql:host=localhost; dbname=app_g7d_infinite_measure;','root','');
-    if(isset($_GET['idParent']) AND !empty($_GET['idParent'])){
-        $getid = $_GET['idParent'];
-        $recupUser = $bdd->prepare('SELECT * FROM parent WHERE idParent = ?');
+    $bdd = new PDO('mysql:host=localhost; dbname=app-g7d;','root','');
+    if(isset($_GET['idUser']) AND !empty($_GET['idUser'])){
+        $getid = $_GET['idUser'];
+        $recupEnfant = $bdd->prepare('SELECT * FROM patient WHERE idUser = ?');
+        $recupUser = $bdd->prepare('SELECT * FROM utilisateur WHERE idUser = ?');
         $recupUser->execute(array($getid));
         if($recupUser->rowCount()>0){
-            $bannirUser = $bdd->prepare('DELETE FROM parent WHERE idParent = ?');
+            $bannirEnfant = $bdd->prepare('DELETE FROM patient WHERE idUser = ?');
+            $bannirEnfant->execute(array($getid));
+            $bannirUser = $bdd->prepare('DELETE FROM utilisateur WHERE idUser = ?');
             $bannirUser->execute(array($getid));
             header('Location: P_admin.php');
         }else{
