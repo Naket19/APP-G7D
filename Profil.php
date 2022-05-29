@@ -48,7 +48,7 @@ if(isset($_POST['deconnexion'])){
                 <a href="Index.php">Accueil</a>
                 <a href="">Données Capteurs</a>
                 <a href="P_faq.html">FAQ</a>
-                <a href="">Application Ludique</a>
+                <a href="applilud.html">Application Ludique</a>
                 <a href="Profil.html">Mon compte</a>
                 <a  class="connect" href="connexion.php" >Connexion</a>
 

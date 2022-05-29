@@ -28,7 +28,7 @@
                     <a href="Index.php">Accueil</a>
                     <a href="donnee_capteur.html">Données Capteurs</a>
                     <a href="P_faq.html">FAQ</a>
-                    <a href="">Application Ludique</a>
+                    <a href="applilud.html">Application Ludique</a>
                     <a href="Profil.html">Mon compte</a>
                     
                 </div>
