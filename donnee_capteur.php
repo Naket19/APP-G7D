@@ -1,3 +1,10 @@
+<?php
+$lastCard = 0;
+$lastSon = 0 ;
+$lastTemp = 0;
+$lastCO2 = 0;
+$prénom = "user";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +17,7 @@
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" /> 
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="icon" href="image/logo_infinte_measure.png">
     <link rel="stylesheet" href="CSS/responsive.css">
     <title>Infinite Measure</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -256,11 +264,6 @@
             </main>
     </div>
     <script src="Data.js"></script>
-
-    
-        
-    
-
 
             <footer>
                 <a href="P_nousContacter.php">Nous contacter</a>
