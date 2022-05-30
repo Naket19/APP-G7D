@@ -46,7 +46,10 @@ if(isset($_POST['deconnexion'])){
                 if(isset ($_SESSION["loggedin"])){
                 ?>
                     <a href="Profil.html">Mon compte</a>
-                    <a class="connect" onclick="disconnect" >Déconnexion</a>
+                    <a class="connect" 
+                    style='background:rgb(101, 137, 244); padding:15px;
+                    border: rgba(48, 48, 48, 0.5) solid 2px;
+                    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);'onclick="disconnect" >Déconnexion</a>
                 <?php
                 } else{
                     ?>
@@ -113,12 +116,9 @@ if(isset($_POST['deconnexion'])){
 
 
 
-
-
-
     <footer>
         <a href="P_nousContacter.php">Nous contacter</a>
-        <a href="mentions_légales.html">Mentions légales</a>
+        <a href="mentions_légales.php">Mentions légales</a>
         <a href="">&copy;INFINITE MEASURE</a>
     </footer>
     <script src="app.js"></script>

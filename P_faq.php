@@ -44,7 +44,10 @@
             <?php 
             if(isset ($SESSION["loggedin"])){
                 ?><a class="mon-compte" href="Profil.php">Mon Compte</a>
-                    <button onclick="disconnect">Déconnexion</button>
+                    <button 
+                    style='background:rgb(101, 137, 244); padding:15px;
+                    border: rgba(48, 48, 48, 0.5) solid 2px;
+                    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);'onclick="disconnect">Déconnexion</button>
             <?php
             } else{
                 ?> 
@@ -125,7 +128,7 @@
     </div>
     <footer>
         <a href="P_nousContacter.php">Nous contacter</a>
-        <a href="mentions_légales.html">Mentions légales</a>
+        <a href="mentions_légales.php">Mentions légales</a>
         <a href="">&copy;INFINITE MEASURE</a>
     </footer>
     <script src="app.js">
