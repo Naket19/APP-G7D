@@ -88,6 +88,35 @@
                     }
                 ?>
             </div>
+            <div class="Type">
+                <h1>Type </h1>
+                <div class="ligne2"style='display: flex;
+                    height: 2px;background-color: #000;'>
+                </div>
+                <?php
+                     $alluser1 = $bdd->query('SELECT * FROM utilisateur WHERE userType="parent" OR userType="medecin" ORDER BY idUser ');
+                     if(isset($_GET['s']) AND !empty($_GET['s']) ){
+                         $recherche = htmlspecialchars($_GET['s']);
+                         $alluser1 = $bdd->query('SELECT * FROM utilisateur WHERE nom LIKE"%'.$recherche.'%" 
+                         OR prénom LIKE"%'.$recherche.'%" ORDER BY idUser');
+                     }
+                 
+                    if($alluser1->rowCount()>0){
+                        while($r_userS = $alluser1->fetch()){
+                            ?>
+                            <P> <?= $r_userS['userType'];?> 
+                                <div class="ligne2" style='display: flex;
+                                height: 2px;background-color: #000;'></div>
+                            </P>
+                            <?php
+                        }
+                    }else {
+                        ?>
+                        <p>vide</p>
+                        <?php
+                    }
+                ?>
+            </div>
             <div class="nom">
                 <h1>Nom </h1>
                 <div class="ligne2"style='display: flex;
