@@ -35,7 +35,7 @@ if(isset($_POST['connexion'])){
                     if($_SESSION['userType']="parent"){
                         header('Location: accueil_client.php');
                     }elseif($_SESSION['userType']="médecin"){
-                        header('Location: accueil_client.php');
+                        header('Location: P_medecin.php');
 
                     }elseif($_SESSION['userType']="admin"){
                         header('Location: P_admin.php');

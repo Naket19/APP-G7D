@@ -38,7 +38,7 @@
                 <a href="P_admin.php">Tableau de bord</a>
                 <a href="Inscription.php">Inscription</a>
                 <a href="Profil.html">Mon compte</a>
-                <div class="connect"><a href="connexion.php" >Déconnexion</a></div>
+                <a class="connect" href="connexion.php" >Déconnexion</a>
                 
             </div>
             <button style='background:rgb(101, 137, 244); padding:15px;

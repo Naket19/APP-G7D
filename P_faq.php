@@ -27,14 +27,34 @@
                 <a href="">Données Capteurs</a>
                 <a href="P_faq.html">FAQ</a>
                 <a href="applilud.html">Application Ludique</a>
-                <a href="Profil.html">Mon compte</a>
-                <a  class="connect" href="connexion.php" >Connexion</a>
-                
+                <?php 
+                if(isset ($SESSION["loggedin"])){
+                ?>
+                    <a href="Profil.html">Mon compte</a>
+                    <a class="connect" onclick="disconnect" >Déconnexion</a>
+                <?php
+                } else{
+                    ?>
+                    <a class="connect" href="connexion.php" >Connexion</a>
+                    <?php
+                }
+                ?>
             </div>
-            <button style='background:rgb(101, 137, 244); padding:15px;
+            <?php 
+            if(isset ($SESSION["loggedin"])){
+                ?><a class="mon-compte" href="Profil.php">Mon Compte</a>
+                    <button onclick="disconnect">Déconnexion</button>
+            <?php
+            } else{
+                ?> 
+                <button style='background:rgb(101, 137, 244); padding:15px;
                 border: rgba(48, 48, 48, 0.5) solid 2px;
                 box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);'
-            ><a href="connexion.php" style='text-decoration:none;color:black;'> Déconnexion</a></button>
+                ><a href="connexion.php" style='text-decoration:none;color:black;'> Connexion</a></button>
+                <?php
+            }
+            ?>
+            
         </nav>
     </header>
     <div class="centredepage">
