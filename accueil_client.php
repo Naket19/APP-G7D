@@ -40,7 +40,7 @@ if(isset($_POST['deconnexion'])){
             <div class="acc-menu">
                 <a href="Index.php">Accueil</a>
                 <a href="">Données Capteurs</a>
-                <a href="P_faq.html">FAQ</a>
+                <a href="P_faq.php">FAQ</a>
                 <?php 
                 if(isset ($_SESSION["loggedin"])){
                 ?>

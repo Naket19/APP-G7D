@@ -166,7 +166,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <a href="mentions_légales.html">Mentions légales</a>
         <a href="">&copy;INFINITE MEASURE</a>
     </footer> -->
-    <script src="app.js"></script>
+    <script src="app.js">
+         function disconnect(){
+            var txt;
+            if (confirm("etes vous sur de vouloir vous déconnecter?")){
+            location.replace("deconnexion.php");
+            }
+        }
+    </script>
 </body>
 
 </html>
