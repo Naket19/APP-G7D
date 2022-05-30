@@ -26,12 +26,9 @@
             </div>
             <div class="acc-menu">
                 <a href="Index.php">Accueil</a>
-<<<<<<< HEAD
                 <a href="P_faq.php">FAQ</a>
-=======
-                
-                <a href="P_faq.html">FAQ</a>
->>>>>>> 97236978640b07ad3df54938ea32689c509ebfec
+
+
                 <a href="applilud.html">Application Ludique</a>
                 <?php 
                 if(isset ($SESSION["loggedin"])){
