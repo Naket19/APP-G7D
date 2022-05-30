@@ -1,7 +1,7 @@
 <?php
     session_start();
     $bdd = new PDO('mysql:host=localhost; dbname=app-g7d;','root','');
-    $alluser = $bdd->query('SELECT * FROM utilisateur WHERE userType="parent" ORDER BY idUser ');
+    $alluser = $bdd->query('SELECT * FROM utilisateur WHERE userType="parent" OR userType="medecin"  ORDER BY idUser ');
     if(isset($_GET['s']) AND !empty($_GET['s']) ){
         $recherche = htmlspecialchars($_GET['s']);
         $alluser = $bdd->query('SELECT * FROM utilisateur WHERE nom LIKE"%'.$recherche.'%"
@@ -93,7 +93,7 @@
                     height: 2px;background-color: #000;'>
                 </div>
                 <?php
-                     $alluser1 = $bdd->query('SELECT * FROM utilisateur WHERE userType="parent" ORDER BY idUser ');
+                     $alluser1 = $bdd->query('SELECT * FROM utilisateur WHERE userType="parent" OR userType="medecin" ORDER BY idUser ');
                      if(isset($_GET['s']) AND !empty($_GET['s']) ){
                          $recherche = htmlspecialchars($_GET['s']);
                          $alluser1 = $bdd->query('SELECT * FROM utilisateur WHERE nom LIKE"%'.$recherche.'%" 
@@ -122,7 +122,7 @@
                     height: 2px;background-color: #000;'>
                 </div>
                 <?php
-                     $alluser2 = $bdd->query('SELECT * FROM utilisateur WHERE userType="parent" ORDER BY idUser ');
+                     $alluser2 = $bdd->query('SELECT * FROM utilisateur WHERE userType="parent" OR userType="medecin" ORDER BY idUser ');
                      if(isset($_GET['s']) AND !empty($_GET['s']) ){
                          $bannir = htmlspecialchars($_GET['s']);
                          $alluser2 = $bdd->query('SELECT * FROM utilisateur WHERE nom LIKE"%'.$bannir.'%" OR 
@@ -152,7 +152,7 @@
                     height: 2px;background-color: #000;'>
                 </div>
                 <?php
-                     $alluser2 = $bdd->query('SELECT * FROM utilisateur WHERE userType="parent" ORDER BY idUser ');
+                     $alluser2 = $bdd->query('SELECT * FROM utilisateur WHERE userType="parent" OR userType="medecin" ORDER BY idUser ');
                      if(isset($_GET['s']) AND !empty($_GET['s']) ){
                          $bannir = htmlspecialchars($_GET['s']);
                          $alluser2 = $bdd->query('SELECT * FROM utilisateur WHERE nom LIKE"%'.$bannir.'%" OR 

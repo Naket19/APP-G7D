@@ -257,11 +257,6 @@
     </div>
     <script src="Data.js"></script>
 
-    
-        
-    
-
-
             <footer>
                 <a href="P_nousContacter.php">Nous contacter</a>
                 <a href="mentions_légales.html">Mentions légales</a>
