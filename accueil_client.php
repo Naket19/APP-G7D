@@ -5,10 +5,7 @@ session_start();
 
 $nom=$_SESSION['nom'];
 $prénom=$_SESSION['prénom'];
-<<<<<<< HEAD
-echo $_SESSION['userType'];
-=======
->>>>>>> 97236978640b07ad3df54938ea32689c509ebfec
+
 if(isset($_POST['deconnexion'])){
     session_destroy();
 }
