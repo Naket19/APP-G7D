@@ -25,7 +25,7 @@
             </div>
             <div class="acc-menu">
                 <a href="Index.php">Accueil</a>
-                <a href="donnee_capteur.html">Données Capteurs</a>
+                <a href="donnee_capteur.php">Données Capteurs</a>
                 <a href="P_faq.html">FAQ</a>
                 <a href="applilud.html">Application Ludique</a>
                 <?php 

@@ -1,20 +1,54 @@
 <?php
-    session_start();
-    $bdd = new PDO('mysql:host=localhost; dbname=app_g7d_infinite_measure;','root','');
-    $utilisateur_id = (int) trim($_GET['idParent']);
-    if(empty($utilisateur_id)){
-        header('Location: /P_admin.php');
-        exit;
-    }
 
-    $req = $bdd->prepare("SELECT * FROM parent
-        WHERE idParent = ?");
-    $req->execute(array($utilisateur_id));
-    $voir_utilisateur = $req->fetch();
-    if(!isset($voir_utilisateur['idParent'])){
-        header('Location: /P_admin.php');
-        exit;
-    }
+use LDAP\Result;
+
+    require "PHP/config.php";
+
+    session_start();
+    $link = DbConnect();
+    
+    $idConsulting = $_GET['idUser'];
+    
+    
+
+    if(!$link){
+        die('ERROR Could not connect to data base ' . mysqli_connect_error());
+    } else{
+        
+        $resultatReq= array();
+        $mysqli = mysqli_connect('localhost','root','','app-g7d');
+        
+        $sql='SELECT nom,prénom,adresse,téléphone,email FROM utilisateur WHERE idUser = '.$idConsulting.'';
+        
+        if($stmt =mysqli_prepare($mysqli,$sql))
+        {
+            if(mysqli_stmt_execute($stmt))
+            {
+                $nom=$prenom=$adresse=$telephone=$email="";
+
+                mysqli_stmt_store_result($stmt);
+                mysqli_stmt_bind_result($stmt,$nom,$prenom,$adresse,$telephone,$email);
+                if(mysqli_stmt_fetch($stmt))
+                {
+                    $resultatReq['nom']= $nom;
+                    $resultatReq['prenom']= $prenom;
+                    $resultatReq['adresse']= $adresse;
+                    $resultatReq['telephone']= $telephone;
+                    $resultatReq['email']= $email;
+                }
+            }
+            
+        }
+        mysqli_stmt_close($stmt);
+        
+        }
+        mysqli_close($mysqli);
+
+    
+    
+    
+
+  
 ?>
 
 <!DOCTYPE html>
@@ -55,15 +89,14 @@
     </header>
     <div class="info">
         <h1>Visualisation de compte</h1>
-        <p> Nom : <?= $voir_utilisateur['nom']?><br><br>
-            Prénom : <?= $voir_utilisateur['prénom']?><br><br>
-            Nombre d'enfants : <?= $voir_utilisateur['nombre_de_patient']?><br><br>
-            Téléphone : <?= $voir_utilisateur['téléphone']?><br><br>
-            Adresse : <?= $voir_utilisateur['adresse']?><br><br>
-            Adresse-électronique : <?= $voir_utilisateur['email']?><br><br>
+        <p> Nom : <?=  $resultatReq['nom']?><br><br>
+            Prénom : <?= $resultatReq['prenom']?><br><br>
+            Téléphone : <?= $resultatReq['telephone']?><br><br>
+            Adresse : <?= $resultatReq['adresse']?><br><br>
+            Adresse-électronique : <?= $resultatReq['email']?><br><br>
         </p>
         <div class="capteur">
-        <a href="inscription.php"style="color:black;
+        <a href="donnee_capteur.php"style="color:black;
         text-decoration:none;">données des capteurs</a>
         </div>
     </div>

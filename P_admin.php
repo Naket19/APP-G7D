@@ -1,13 +1,16 @@
 <?php
     session_start();
-    $bdd = new PDO('mysql:host=localhost; dbname=app_g7d_infinite_measure;','root','');
-    $alluser = $bdd->query('SELECT * FROM parent ORDER BY idParent ');
+    $bdd = new PDO('mysql:host=localhost; dbname=app-g7d;','root','');
+    $alluser = $bdd->query('SELECT * FROM utilisateur WHERE userType="parent" ORDER BY idUser ');
     if(isset($_GET['s']) AND !empty($_GET['s']) ){
         $recherche = htmlspecialchars($_GET['s']);
-        $alluser = $bdd->query('SELECT * FROM parent WHERE nom LIKE"%'.$recherche.'%"
-        OR prénom LIKE"%'.$recherche.'%" ORDER BY idParent ');
+        $alluser = $bdd->query('SELECT * FROM utilisateur WHERE nom LIKE"%'.$recherche.'%"
+        OR prénom LIKE"%'.$recherche.'%" ORDER BY idUser ');
     }
+    
+    $arrayUser= array();
 
+    
 ?>
 
 <!DOCTYPE html>
@@ -69,11 +72,13 @@
                     if($alluser->rowCount()>0){
                         while($r_user = $alluser->fetch()){
                             ?>
-                            <P><?= $r_user['idParent'];?><div class="ligne2" style='display: flex;
+                            
+                            <P><?= $r_user['idUser'];?><div class="ligne2" style='display: flex;
                                 height: 2px;background-color: #000;'></div>
                             </P>
                             
                             <?php
+                            $arrayUser[]=$r_user['idUser'];
                         }
                     }else {
                         ?>
@@ -88,11 +93,11 @@
                     height: 2px;background-color: #000;'>
                 </div>
                 <?php
-                     $alluser1 = $bdd->query('SELECT * FROM parent ORDER BY idParent ');
+                     $alluser1 = $bdd->query('SELECT * FROM utilisateur WHERE userType="parent" ORDER BY idUser ');
                      if(isset($_GET['s']) AND !empty($_GET['s']) ){
                          $recherche = htmlspecialchars($_GET['s']);
-                         $alluser1 = $bdd->query('SELECT * FROM parent WHERE nom LIKE"%'.$recherche.'%" 
-                         OR prénom LIKE"%'.$recherche.'%" ORDER BY idParent ');
+                         $alluser1 = $bdd->query('SELECT * FROM utilisateur WHERE nom LIKE"%'.$recherche.'%" 
+                         OR prénom LIKE"%'.$recherche.'%" ORDER BY idUser');
                      }
                  
                     if($alluser1->rowCount()>0){
@@ -117,17 +122,17 @@
                     height: 2px;background-color: #000;'>
                 </div>
                 <?php
-                     $alluser2 = $bdd->query('SELECT * FROM parent ORDER BY idParent ');
+                     $alluser2 = $bdd->query('SELECT * FROM utilisateur WHERE userType="parent" ORDER BY idUser ');
                      if(isset($_GET['s']) AND !empty($_GET['s']) ){
                          $bannir = htmlspecialchars($_GET['s']);
-                         $alluser2 = $bdd->query('SELECT * FROM parent WHERE nom LIKE"%'.$bannir.'%" OR 
-                         prénom LIKE"%'.$bannir.'%" ORDER BY idParent ');
+                         $alluser2 = $bdd->query('SELECT * FROM utilisateur WHERE nom LIKE"%'.$bannir.'%" OR 
+                         prénom LIKE"%'.$bannir.'%" ORDER BY idUser ');
                      }
                  
                     if($alluser2->rowCount()>0){
                         while($r_user2 = $alluser2->fetch()){
                             ?>
-                            <P> <a href="bannir.php?idParent=<?= $r_user2['idParent'];?>" style="color:red;
+                            <P> <a href="bannir.php?idUser=<?= $r_user2['idUser'];?>" style="color:red;
                             text-decoration: none;"> Bannir le membre</a>
                             <div class="ligne2" style='display: flex;
                                 height: 2px;background-color: #000;'></div>
@@ -147,34 +152,36 @@
                     height: 2px;background-color: #000;'>
                 </div>
                 <?php
-                     $alluser2 = $bdd->query('SELECT * FROM parent ORDER BY idParent ');
+                     $alluser2 = $bdd->query('SELECT * FROM utilisateur WHERE userType="parent" ORDER BY idUser ');
                      if(isset($_GET['s']) AND !empty($_GET['s']) ){
                          $bannir = htmlspecialchars($_GET['s']);
-                         $alluser2 = $bdd->query('SELECT * FROM parent WHERE nom LIKE"%'.$bannir.'%" OR 
-                         prénom LIKE"%'.$bannir.'%" ORDER BY idParent ');
+                         $alluser2 = $bdd->query('SELECT * FROM utilisateur WHERE nom LIKE"%'.$bannir.'%" OR 
+                         prénom LIKE"%'.$bannir.'%" ORDER BY idUser ');
                      }
                  
-                    if($alluser2->rowCount()>0){
-                        while($r_user2 = $alluser2->fetch()){
-                            ?>
-                            <P> <a href="consulter.php?idParent=<?= $r_user2['idParent'];?>" style="color:red;
-                            text-decoration: none;"> consulter le profil</a>
-                            <div class="ligne2" style='display: flex;
-                                height: 2px;background-color: #000;'></div>
-                            </P>
-                            <?php
+                    if($alluser2->rowCount()>0)
+                    {
+                        $i=0;
+                        while($r_user2 = $alluser2->fetch())
+                        {
+                            echo '<a href="consulter.php?idUser= '.$arrayUser[$i].'" style="color:red; text-decoration: none;"><p> consulter le profil</a></p>';
+                            echo '<div class="ligne2" style="display: flex; height: 2px;background-color: #000;"></div>';
+                            $i++;
+                            
+                             
                         }
                     }else {
-                        ?>
-                        <p>vide</p>
-                        <?php
+                        
+                        echo '<p>vide</p>';
+                        
                     }
                 ?>
             </div>
         </div>
         <div class="bout">
-        <a href="inscription.php"style="color:black;
+        <a href="inscriptionParent.php"style="color:black;
         text-decoration:none;"> Ajouter un utilisateur</a>
+        
         </div>
         
     </div>
