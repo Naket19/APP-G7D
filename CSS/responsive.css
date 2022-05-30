@@ -1,4 +1,11 @@
 
+.mon-compte{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    align-items: center;
+    padding: 32px;
+}
 @media screen and (max-width:1145px){
     .toggle{
         display: block;
@@ -48,7 +55,10 @@
         display: flex;
         padding: 32px;
     }
-  
+    .mon-compte{
+        display: flex;
+        padding: 32px;
+    }
     .open .acc-menu {
         transform: translateX(0);
     }
