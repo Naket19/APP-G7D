@@ -24,6 +24,7 @@ if(isset($_POST['connexion'])){
                     echo "Le pseudo ou le mot de passe est incorrect, le compte n'a pas été trouvé.";
                 } else {
                     session_start();
+                    $_SESSION["loggedin"]=true;
                     $_SESSION['nom'] = $resultat['nom'];
                     $_SESSION['prénom'] = $resultat['prénom'];
                     $_SESSION['email'] = $email;
