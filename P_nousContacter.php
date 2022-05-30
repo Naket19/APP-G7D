@@ -12,6 +12,7 @@
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" /> 
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="icon" href="image/logo_infinte_measure.png">
     <title>Infinite Measure</title>
 </head>
 <body>
@@ -98,9 +99,16 @@
     ?>
     <footer>
         <a href="P_nousContacter.php">Nous contacter</a>
-        <a href="mentions_légales.html">Mentions légales</a>
+        <a href="mentions_légales.php">Mentions légales</a>
         <a href="">&copy;INFINITE MEASURE</a>
     </footer>
-    <script src="app.js"></script>
+    <script src="app.js">
+         function disconnect(){
+            var txt;
+            if (confirm("etes vous sur de vouloir vous déconnecter?")){
+            location.replace("deconnexion.php");
+            }
+        }
+    </script>
 </body>
 </html>

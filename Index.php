@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="CSS/responsive.css">
+    <link rel="icon" href="image/logo_infinte_measure.png">
     <title>Infinite Measure</title>
 </head>
 <body>
@@ -25,14 +26,21 @@
             </div>
             <div class="acc-menu">
                 <a href="Index.php">Accueil</a>
-                <a href="donnee_capteur.php">Données Capteurs</a>
+<<<<<<< HEAD
+                <a href="P_faq.php">FAQ</a>
+=======
+                
                 <a href="P_faq.html">FAQ</a>
+>>>>>>> 97236978640b07ad3df54938ea32689c509ebfec
                 <a href="applilud.html">Application Ludique</a>
                 <?php 
                 if(isset ($SESSION["loggedin"])){
                 ?>
+                    <a href="donnee_capteur.php">Données Capteurs</a>
                     <a href="Profil.html">Mon compte</a>
+                    <a href="donnee_capteur.php">Données Capteurs</a>
                     <a class="connect" onclick="disconnect" >Déconnexion</a>
+
                 <?php
                 } else{
                     ?>
@@ -44,14 +52,17 @@
             <?php 
             if(isset ($SESSION["loggedin"])){
                 ?><a class="mon-compte" href="Profil.php">Mon Compte</a>
-                    <button onclick="disconnect">Déconnexion</button>
+                    <button 
+                    style='background:rgb(101, 137, 244); padding:15px;
+                    border: rgba(48, 48, 48, 0.5) solid 2px;
+                    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);'onclick="disconnect">Déconnexion</button>
             <?php
             } else{
                 ?> 
                 <button style='background:rgb(101, 137, 244); padding:15px;
                 border: rgba(48, 48, 48, 0.5) solid 2px;
                 box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);'
-                ><a href="connexion.php" style='text-decoration:none;color:black;'> Connexion</a></button>
+                onclick="window.location.href='connexion.php';"><a href="connexion.php" style='text-decoration:none;color:black;'> Connexion</a></button>
                 <?php
             }
             ?>
@@ -194,9 +205,16 @@
     </div>       
     <footer>
         <a href="P_nousContacter.php">Nous contacter</a>
-        <a href="mentions_légales.html">Mentions légales</a>
+        <a href="mentions_légales.php">Mentions légales</a>
         <a href="">&copy;INFINITE MEASURE</a>
     </footer>
-    <script src="app.js"></script>
+    <script src="app.js">
+         function disconnect(){
+            var txt;
+            if (confirm("etes vous sur de vouloir vous déconnecter?")){
+            location.replace("deconnexion.php");
+            }
+        }
+    </script>
 </body>
 </html>
