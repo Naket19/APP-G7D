@@ -1,3 +1,10 @@
+<?php
+$lastCard = 0;
+$lastSon = 0 ;
+$lastTemp = 0;
+$lastCO2 = 0;
+$prénom = "user";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
