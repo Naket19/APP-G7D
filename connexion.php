@@ -1,9 +1,14 @@
 <?php
 require "PHP/config.php";
 $link = DbConnect();
+//session_destroy();
 if(isset($_POST['connexion'])){
     $email = $_POST["email"];
     $mot_de_passe = $_POST["mot_de_passe"];
+
+    $medecin="médecin";
+    $parent="parent";
+    $admin ="admin";
 
     if(empty($_POST['email'])){
         echo "Le champ Pseudo est vide.";
@@ -33,13 +38,17 @@ if(isset($_POST['connexion'])){
                     $_SESSION['userType'] = $resultat['userType'];
                     
                     echo "Vous êtes à présent connecté !";
-                    if($_SESSION['userType']="parent"){
+
+                    if($resultat['userType']=="parent"){
                         header('Location: accueil_client.php');
-                    }elseif($_SESSION['userType']="médecin"){
+                        
+                    }elseif($resultat['userType']=="médecin"){
                         header('Location: P_medecin.php');
 
-                    }elseif($_SESSION['userType']="admin"){
+                    }elseif($resultat['userType']=="admin"){
                         header('Location: P_admin.php');
+                        
+                        
 
                     }            
                 }
