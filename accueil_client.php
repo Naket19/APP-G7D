@@ -42,7 +42,7 @@ if(isset($_POST['deconnexion'])){
                 <a href="">Données Capteurs</a>
                 <a href="P_faq.html">FAQ</a>
                 <?php 
-                if(isset ($SESSION["loggedin"])){
+                if(isset ($_SESSION["loggedin"])){
                 ?>
                     <a href="Profil.html">Mon compte</a>
                     <a class="connect" onclick="disconnect" >Déconnexion</a>
@@ -55,7 +55,7 @@ if(isset($_POST['deconnexion'])){
                 ?>
             </div>
             <?php 
-            if(isset ($SESSION["loggedin"])){
+            if(isset ($_SESSION["loggedin"])){
                 ?><a class="mon-compte" href="Profil.php">Mon Compte</a>
                     <button onclick="disconnect">Déconnexion</button>
             <?php

@@ -32,7 +32,7 @@ session_start();
                 <a href="P_admin.php">Tableau de bord</a>
                 <a href="InscriptionParent.php">Inscription</a>
                 <?php 
-                if(isset ($SESSION["loggedin"])){
+                if(isset ($_SESSION["loggedin"])){
                 ?>
                     <a href="Profil.html">Mon compte</a>
                     <a class="connect" onclick="disconnect" >Déconnexion</a>
@@ -45,7 +45,7 @@ session_start();
                 ?>
             </div>
             <?php 
-            if(isset ($SESSION["loggedin"])){
+            if(isset ($_SESSION["loggedin"])){
                 ?><a class="mon-compte" href="Profil.php">Mon Compte</a>
                     <button onclick="disconnect">Déconnexion</button>
             <?php
@@ -67,10 +67,10 @@ session_start();
         <a href="">&copy;INFINITE MEASURE</a>
     </footer>        
     <script src="app.js">
-        function disconnect(){
+        fonction disconnect(){
             var txt;
             if (confirm("etes vous sur de vouloir vous déconnecter?")){
-            location.replace("deconnexion.php")
+            location.replace("deconnexion.php");
             }
         }
     </script>
