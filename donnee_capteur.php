@@ -17,6 +17,7 @@ $prénom = "user";
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" /> 
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="icon" href="image/logo_infinte_measure.png">
     <link rel="stylesheet" href="CSS/responsive.css">
     <title>Infinite Measure</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -269,6 +270,13 @@ $prénom = "user";
                 <a href="mentions_légales.html">Mentions légales</a>
                 <a href="">&copy;INFINITE MEASURE</a>
             </footer>
-            <script src="app.js"></script>
+            <script src="app.js">
+                 function disconnect(){
+            var txt;
+            if (confirm("etes vous sur de vouloir vous déconnecter?")){
+            location.replace("deconnexion.php");
+            }
+        }
+            </script>
 </body>
 </html>

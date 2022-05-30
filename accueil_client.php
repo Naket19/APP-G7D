@@ -26,6 +26,7 @@ if(isset($_POST['deconnexion'])){
     <link rel="stylesheet" href="CSS/responsive.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="CSS/P_accueil_client.css">
+    <link rel="icon" href="image/logo_infinte_measure.png">
     <title>Infinite Measure</title>
 </head>
 <body>
@@ -39,7 +40,7 @@ if(isset($_POST['deconnexion'])){
             <div class="acc-menu">
                 <a href="Index.php">Accueil</a>
                 <a href="">Données Capteurs</a>
-                <a href="P_faq.html">FAQ</a>
+                <a href="P_faq.php">FAQ</a>
                 <?php 
                 if(isset ($_SESSION["loggedin"])){
                 ?>
