@@ -7,6 +7,7 @@ if(!$_SESSION['mdp']){
 }
 $nom=$_SESSION['nom'];
 $prénom=$_SESSION['prénom'];
+
 if(isset($_POST['deconnexion'])){
     session_destroy();
 }

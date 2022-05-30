@@ -25,13 +25,13 @@
             </div>
             <div class="acc-menu">
                 <a href="Index.php">Accueil</a>
-                <a href="">Données Capteurs</a>
-                <a href="P_faq.html">FAQ</a>
+                <a href="P_faq.php">FAQ</a>
                 <a href="applilud.html">Application Ludique</a>
                 <?php 
                 if(isset ($SESSION["loggedin"])){
                 ?>
                     <a href="Profil.html">Mon compte</a>
+                    <a href="donnee_capteur.php">Données Capteurs</a>
                     <a class="connect" onclick="disconnect" >Déconnexion</a>
                 <?php
                 } else{
