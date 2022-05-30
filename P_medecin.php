@@ -67,7 +67,7 @@ session_start();
         <a href="">&copy;INFINITE MEASURE</a>
     </footer>        
     <script src="app.js">
-        fonction disconnect(){
+        function disconnect(){
             var txt;
             if (confirm("etes vous sur de vouloir vous déconnecter?")){
             location.replace("deconnexion.php")
