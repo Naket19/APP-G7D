@@ -41,14 +41,37 @@
             <div class="acc-menu">
                 <a href="P_admin.php">Tableau de bord</a>
                 <a href="Inscription.php">Inscription</a>
-                <a href="Profil.html">Mon compte</a>
-                <a class="connect" href="connexion.php" >Déconnexion</a>
-                
+                <?php 
+                if(isset ($_SESSION["loggedin"])){
+                ?>
+                    <a href="Profil.html">Mon compte</a>
+                    <a class="connect" onclick="disconnect" >Déconnexion</a>
+                <?php
+                } else{
+                    ?>
+                    <a class="connect" href="connexion.php" >Connexion</a>
+                    <?php
+                }
+                ?>
             </div>
-            <button style='background:rgb(101, 137, 244); padding:15px;
+            <?php 
+            if(isset ($_SESSION["loggedin"])){
+                ?><a class="mon-compte" href="Profil.php">Mon Compte</a>
+                    <input type="button" onclick="disconnect"value='Déonnexion'
+                style='background:rgb(101, 137, 244); padding:15px;border-radius: 10px;
                 border: rgba(48, 48, 48, 0.5) solid 2px;
-                box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);'
-            ><a href="connexion.php" style='text-decoration:none;color:black;'> Déconnexion</a></button>
+                box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);'/>
+            <?php
+            } else{
+                ?> 
+                <input type="button" onclick="window.location.href='connexion.php';"value='Connexion'
+                style='background:rgb(101, 137, 244); padding:15px;border-radius: 10px;
+                border: rgba(48, 48, 48, 0.5) solid 2px;
+                box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);'/>
+                <?php
+            }
+            ?>
+            
         </nav>
     </header>
     <div class="tableau_bord">
@@ -218,7 +241,7 @@
 
     <!-- <footer>
         <a href="P_nousContacter.php">Nous contacter</a>
-        <a href="mentions_légales.html">Mentions légales</a>
+        <a href="mentions_légales.php">Mentions légales</a>
         <a href="">&copy;INFINITE MEASURE</a>
     </footer> -->
     <script src="app.js">

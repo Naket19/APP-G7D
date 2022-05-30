@@ -42,19 +42,19 @@
                 ?>
             </div>
             <?php 
-            if(isset ($SESSION["loggedin"])){
+            if(isset ($_SESSION["loggedin"])){
                 ?><a class="mon-compte" href="Profil.php">Mon Compte</a>
-                    <button 
-                    style='background:rgb(101, 137, 244); padding:15px;
-                    border: rgba(48, 48, 48, 0.5) solid 2px;
-                    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);'onclick="disconnect">Déconnexion</button>
+                    <input type="button" onclick="disconnect"value='Déonnexion'
+                style='background:rgb(101, 137, 244); padding:15px;border-radius: 10px;
+                border: rgba(48, 48, 48, 0.5) solid 2px;
+                box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);'/>
             <?php
             } else{
                 ?> 
-                <button style='background:rgb(101, 137, 244); padding:15px;
+                <input type="button" onclick="window.location.href='connexion.php';"value='Connexion'
+                style='background:rgb(101, 137, 244); padding:15px;border-radius: 10px;
                 border: rgba(48, 48, 48, 0.5) solid 2px;
-                box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);'
-                ><a href="connexion.php" style='text-decoration:none;color:black;'> Connexion</a></button>
+                box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);'/>
                 <?php
             }
             ?>

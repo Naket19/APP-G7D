@@ -2,7 +2,9 @@
 require "PHP/config.php";
 $link = DbConnect();
 session_start();
-
+if(!$_SESSION['mdp']){
+    header('Location: connexion.php');
+}
 $nom=$_SESSION['nom'];
 $prénom=$_SESSION['prénom'];
 if(isset($_POST['deconnexion'])){
@@ -31,7 +33,7 @@ if(isset($_POST['deconnexion'])){
 </head>
 <body>
     <header>
-        <nav>
+    <nav>
             <img src="image/logo_infinte_measure.png" alt="">
             <div class="toggle">
                 <i class="fa-solid fa-bars ouvrir"></i>
@@ -39,16 +41,15 @@ if(isset($_POST['deconnexion'])){
             </div>
             <div class="acc-menu">
                 <a href="Index.php">Accueil</a>
-                <a href="">Données Capteurs</a>
-                <a href="P_faq.php">FAQ</a>
+                
+                <a href="P_faq.html">FAQ</a>
+                <a href="applilud.html">Application Ludique</a>
                 <?php 
-                if(isset ($_SESSION["loggedin"])){
+                if(isset ($SESSION["loggedin"])){
                 ?>
+                    <a href="donnee_capteur.php">Données Capteurs</a>
                     <a href="Profil.html">Mon compte</a>
-                    <a class="connect" 
-                    style='background:rgb(101, 137, 244); padding:15px;
-                    border: rgba(48, 48, 48, 0.5) solid 2px;
-                    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);'onclick="disconnect" >Déconnexion</a>
+                    <a class="connect" onclick="disconnect" >Déconnexion</a>
                 <?php
                 } else{
                     ?>
@@ -60,14 +61,17 @@ if(isset($_POST['deconnexion'])){
             <?php 
             if(isset ($_SESSION["loggedin"])){
                 ?><a class="mon-compte" href="Profil.php">Mon Compte</a>
-                    <button onclick="disconnect">Déconnexion</button>
+                    <input type="button" onclick="disconnect"value='Déonnexion'
+                style='background:rgb(101, 137, 244); padding:15px;border-radius: 10px;
+                border: rgba(48, 48, 48, 0.5) solid 2px;
+                box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);'/>
             <?php
             } else{
                 ?> 
-                <button style='background:rgb(101, 137, 244); padding:15px;
+                <input type="button" onclick="window.location.href='connexion.php';"value='Connexion'
+                style='background:rgb(101, 137, 244); padding:15px;border-radius: 10px;
                 border: rgba(48, 48, 48, 0.5) solid 2px;
-                box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);'
-                ><a href="connexion.php" style='text-decoration:none;color:black;'> Connexion</a></button>
+                box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);'/>
                 <?php
             }
             ?>
