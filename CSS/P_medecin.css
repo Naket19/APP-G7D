@@ -108,7 +108,7 @@ table
     border: solid 3px;
     margin-top: 5%;
     overflow: auto;
-    justify-content: center;
+    justify-content:center;
     border-collapse: collapse;
     width: 50%;
 }

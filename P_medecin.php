@@ -1,8 +1,6 @@
 <?php
 session_start();
-// if(!$_SESSION['mdp']){
-//     header('Location: connexion.php');
-// }
+
 
 $bdd = new PDO('mysql:host=localhost; dbname=app-g7d;', 'root', '');
 $alluser = $bdd->query('SELECT * FROM utilisateur WHERE userType="parent"  ORDER BY idUser ');
@@ -42,15 +40,19 @@ $arrayUser = array();
             <div class="acc-menu">
                 <a href="P_medecin.php">Tableau de bord</a>
                 <a href="InscriptionParent.php">Ajout d'un parent</a>
+                
                 <?php
                 if (isset($_SESSION["loggedin"])) {
+
+                    echo '<a href="profil.php">Mon compte</a>';
+                    echo '<a href="deconnexion.php">Déconnexion</a>';
                 ?>
                     
-                    <a class="connect" onclick="disconnect">Déconnexion</a>
+                    
                 <?php
                 } else {
                 ?>
-                    <a class="connect" href="connexion.php">Connexion</a>
+                    
                 <?php
                 }
                 ?>
@@ -125,9 +127,8 @@ $arrayUser = array();
             }
             ?>
         </table>
-        <input type="button" onclick="window.location.href='InscriptionEnfant.php';" value='Créer patient' style='background:rgb(101, 137, 244); padding:15px;border-radius: 10px;
-                border: rgba(48, 48, 48, 0.5) solid 2px;
-                box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);' />
+                <br><br>
+                <button onclick="window.location.href = 'inscriptionEnfant.php';" >Ajouter un enfant</button>
     </div>
     <footer>
         <a href="P_nousContacter.php">Nous contacter</a>
