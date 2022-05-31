@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $lastCard = 0;
 $lastSon = 0 ;
 $lastTemp = 0;
@@ -24,56 +26,17 @@ $prénom = "user";
 
 </head>
 
-
+<?php 
+        if($_SESSION['userType']=="parent"){
+            include("headerParent.php");                  
+        }elseif($_SESSION['userType']=="médecin"){
+            include("headerMedecin.php");              
+        }else{
+            include("headerAdmin.php");
+        }
+?>
 <body>
     <div class="container"> 
-        <header>
-            
-        <nav>
-            <img src="image/logo_infinte_measure.png" alt="">
-            <div class="toggle">
-                <i class="fa-solid fa-bars ouvrir"></i>
-                <i class="fa-solid fa-circle-xmark fermer"></i>
-            </div>
-            <div class="acc-menu">
-                <a href="Index.php">Accueil</a>
-                <a href="donnee_capteur.php">Données Capteurs</a>
-                <a href="P_faq.html">FAQ</a>
-                <a href="applilud.html">Application Ludique</a>
-                <?php 
-                if(isset ($SESSION["loggedin"])){
-                ?>
-                    <a href="Profil.html">Mon compte</a>
-                    <a class="connect" onclick="disconnect" >Déconnexion</a>
-                <?php
-                } else{
-                    ?>
-                    <a class="connect" href="connexion.php" >Connexion</a>
-                    <?php
-                }
-                ?>
-            </div>
-            <?php 
-            if(isset ($SESSION["loggedin"])){
-                ?><a class="mon-compte" href="Profil.php">Mon Compte</a>
-                    <button 
-                    style='background:rgb(101, 137, 244); padding:15px;
-                    border: rgba(48, 48, 48, 0.5) solid 2px;
-                    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);'onclick="disconnect">Déconnexion</button>
-            <?php
-            } else{
-                ?> 
-                <button style='background:rgb(101, 137, 244); padding:15px;
-                border: rgba(48, 48, 48, 0.5) solid 2px;
-                box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);'
-                ><a href="connexion.php" style='text-decoration:none;color:black;'> Connexion</a></button>
-                <?php
-            }
-            ?>
-            
-        </nav>
-        </header>
-
             <div id="sidebar">
                 <div class="noms_onglets">
                     <div class="onglets" data-anim="1">

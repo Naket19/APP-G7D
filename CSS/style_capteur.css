@@ -4,83 +4,13 @@
     padding: 0;
   }
   body{
-  color: black;
-  }
-
-  header{
-    /* background: rgb(174, 162, 162); */
-    background: url(../image/back-ecriture.png);  
+    margin: 0 auto;
+    background: url(../image/background.png);
+    background-size: cover; 
+    font-family: 'Poppins';
+    font-size: 22px;
 }
 
-nav{
-    align-items: center; 
-    margin-left: 3%;
-    display: inline-flex;
-    justify-content: space-between;
-    width: 90%;
-    height: 97px;
-    
-}
-nav button{
-    padding: 8px;
-    border-radius: 10px;
-    
-}
-.acc-menu a {
-   
-    justify-content: space-between;
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-    align-items: center;
-    padding: 32px;
-
-}
-nav img{
-    display: inline-flex;
-    width: 80px;
-    height: 10vh;
-    border-radius: 10px;
-    margin-top: 5px;
-    margin-right: 5px;
-}
-
-.acc-menu a:hover{
-    background: rgb(237, 238, 241);
-    color: black;
-}
-
-nav button a {
-    text-decoration: none;
-}
-.connexion{
-    display: none;
-}
-.toggle{
-    display:none;
-}
-.connect{
-    display:none;
-}
-
-.acc-menu a {
-   
-    justify-content: space-between;
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-    align-items: center;
-    padding: 32px;
-
-}
-nav img{
-    display: inline-flex;
-    width: 80px;
-    height: 10vh;
-    border-radius: 10px;
-    margin-top: 5px;
-    margin-right: 5px;
-}
 
   
   .container{
@@ -94,19 +24,6 @@ nav img{
       "sidebar main main main"
       "sidebar main main main";
   }
-  
-  header{
-    grid-area: header;
-    position: relative;
-      height: 100px;
-      width: 100%;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      padding: 20px 2%;
-      background-color: url(../image/back-ecriture.png);  
-      z-index: 1;
-      }
       main {
         position: relative;
         background: rgb(241, 240, 240);
@@ -118,9 +35,6 @@ nav img{
         grid-area: sidebar;
         background: #f5f3f3;
       }  
-    
-
-    
 
   .noms_onglets{
   position: absolute;
