@@ -36,7 +36,8 @@ start_btn.onclick = ()=>{
 }
 // if exitQuiz button clicked
 exit_btn.onclick = ()=>{
-    window.location.href ="Index.php"; //hide info box
+    window.location.href ="APP-G7D/index.php"; //hide info box
+    console.log("zebicamarchepas");
 }
 // if continueQuiz button clicked
 continue_btn.onclick = ()=>{
@@ -76,7 +77,8 @@ restart_quiz.onclick = ()=>{
 }
 // if quitQuiz button clicked
 quit_quiz.onclick = ()=>{
-    window.location.href ="Index.php" ; //reload the current window
+    window.location.href ="APP-G7D/index.php" ; //reload the current window
+    console.log("zebicamarchepas2");
 }
 const next_btn = document.querySelector("footer .next_btn");
 const bottom_ques_counter = document.querySelector("footer .total_que");
