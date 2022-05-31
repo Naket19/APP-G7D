@@ -20,10 +20,11 @@ session_start();
     <title>Infinite Measure</title>
 
 </head>
-<?php 
-        if($_SESSION['userType']=="parent"){
-            include("headerParent.php");                  
-        }else{include("header.php");              
+<?php   
+         if(isset($_SESSION['loggedin'])){       
+             include("headerParent.php");
+            }else{
+                include("header.php");     
         }
 ?>
 
