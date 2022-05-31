@@ -34,10 +34,9 @@ $prénom = "user";
             include("headerAdmin.php");
         }
 ?>
-<<<<<<< HEAD
+
 
 <body style="font-family: 'poppins'">
->>>>>>> 70169639a3394bf71e2f88fd5b5637ab51f003de
     <div class="container"> 
             <div id="sidebar">
                 <div class="noms_onglets">
