@@ -1,4 +1,3 @@
-
 <header>
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/responsive.css">
@@ -13,14 +12,16 @@
             <a href="Inscription.php">Ajout d'un médecin</a>
             <a href="profil.php">Mon compte</a>
 
-            <a class="connect" href="deconnexion.php" >Déconnexion</a>
+            <a class="connect" href="deconnexion.php">Déconnexion</a>
         </div>
 
-            <input class="button" type="button" onclick="window.location.href='deconnexion.php';" value='Déconnexion'
-                style='background:rgb(101, 137, 244); padding:15px;border-radius: 10px;
+        <input type="button" value="<?php echo $_SESSION['nom']." ".$_SESSION['prénom'] ?>" style='background:rgb(101, 137, 244); padding:15px; border-radius: 10px;  border: rgba(48, 48, 48, 0.5) solid 2px;
+                box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);' />
+
+        <input class="button" type="button" onclick="window.location.href='deconnexion.php';" value='Déconnexion' style='background:rgb(101, 137, 244); padding:15px;border-radius: 10px;
                 border: rgba(48, 48, 48, 0.5) solid 2px;
-                box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);'/>
-            
+                box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);' />
+
     </nav>
     <script src="app.js">
     </script>

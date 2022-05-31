@@ -9,7 +9,9 @@ use LDAP\Result;
     
     $idConsulting = $_GET['idUser'];
     
-    
+    if(!$_SESSION["loggedin"]){
+        header('Location: connexion.php');
+    }
 
     if(!$link){
         die('ERROR Could not connect to data base ' . mysqli_connect_error());

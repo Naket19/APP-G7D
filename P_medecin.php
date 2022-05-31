@@ -10,6 +10,9 @@ if (isset($_GET['s']) and !empty($_GET['s'])) {
     $alluser = $bdd->query('SELECT * FROM utilisateur WHERE nom LIKE"%' . $recherche . '%"
         OR prénom LIKE"%' . $recherche . '%" ORDER BY idUser ');
 }
+if(!$_SESSION["loggedin"]){
+    header('Location: connexion.php');
+}
 
 $arrayUser = array();
 ?>
