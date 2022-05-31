@@ -10,15 +10,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $oldmot_de_passe = $_POST["oldmdp"];
     $mot_de_passe = $_POST["mot_de_passe"];
     $mot_de_passe1 = $_POST["newmdp1"];
+    $resultatReq= array();
+    $arrayUser['idUser'] = $_SESSION['idUser'];
 
-      
+    
     $stmt = $link->prepare("SELECT * FROM utilisateur WHERE email=? AND idUser <> ?");
     $stmt->execute([$email,$userId]); 
     $validEmail = $stmt->fetch(); 
 
     $req1 = $link->prepare("SELECT * FROM utilisateur WHERE idUser = ?");
-    $req1->execute([$_SESSION['idUser']]);
+    $req1->execute([$arrayUser['idUser']]);
     $req_user = $req1->fetch();
+    $resultatReq['mot_de_passe']=$req_user['mot_de_passe'];
 
     if (isset($_POST['newEmail'],$_POST['oldmdp'], $_POST['mot_de_passe'], $_POST['newmdp1'])) {
 

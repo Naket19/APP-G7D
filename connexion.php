@@ -5,7 +5,7 @@ $link = DbConnect();
 if(isset($_POST['connexion'])){
     $email = $_POST["email"];
     $mot_de_passec = $_POST["mot_de_passe"];
-    $mot_de_passe =$mot_de_passec;
+    $mot_de_passe =md5($mot_de_passec);
     $medecin="médecin";
     $parent="parent";
     $admin ="admin";
@@ -20,7 +20,7 @@ if(isset($_POST['connexion'])){
                 echo "Erreur de connexion à la base de données.";
             } else {
                 $Requete = $link->prepare("SELECT * FROM utilisateur WHERE email = :email AND mot_de_passe = :mot_de_passe");
-                $Requete->execute(array('email'=> $email,'mot_de_passe'=>$mot_de_passe));
+                $Requete->execute(array('email'=> $email,'mot_de_passe'=>md5($mot_de_passe)));
                 $resultat = $Requete->fetch();
                 if(!$resultat) {
                     echo "Le pseudo ou le mot de passe est incorrect, le compte n'a pas été trouvé.";
