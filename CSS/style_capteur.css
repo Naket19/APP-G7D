@@ -10,7 +10,6 @@
   }
 
   header{
-    /* background: rgb(174, 162, 162); */
     background: url(../image/back-ecriture.png);  
 }
 
@@ -53,36 +52,34 @@ nav img{
 
 
   
-  .container{
+.container{
   display: grid;
-    height: 100vh;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.5fr 1.5fr 1.5fr 0.5fr;
-    grid-template-areas:
-      "header header header header"
+  height: 82vh;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 1.5fr 1.5fr 0.5fr;
+  grid-template-areas:
+      "sidebar main main main"
       "sidebar main main main"
       "sidebar main main main"
       "sidebar main main main";
-  }
+}
       main {
         position: relative;
-        background: rgb(241, 240, 240);
+        /* background: rgb(241, 240, 240); */
+        background: url(../image/background.png);
         grid-area: main;
         
       }   
       #sidebar {
         position: relative;
         grid-area: sidebar;
-        background: #f5f3f3;
+        background-color: aliceblue; 
       }  
 
   .noms_onglets{
   position: absolute;
   top: 2.5vh;
-  margin: 2.5vh;
- 
-  
-        
+  margin: 2.5vh;     
   }
 
     
@@ -148,14 +145,32 @@ nav img{
   }
   
   
-  
   .container{
-   
+    background: url(../image/background.png);
     max-width: 2000px;
     font-family: "poppins";
   
   }
-  
+  footer{
+    display: flex;
+    justify-content: space-between;
+    flex-shrink: 0;
+    width: 100%;
+    height: 6.1vh;
+    /* position:absolute; */
+    bottom: 0px;
+    left: 0px;
+    background: url(../image/back-ecriture.png);
+  }
+  footer a{
+    display: inline-flex;
+    text-decoration: none;
+    color: #000;
+    font-size: 17px;
+    align-items: center;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
   
   @keyframes fade {
     from {
