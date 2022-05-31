@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require "PHP/config.php";
 $link = DbConnect();
 
@@ -35,6 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = $link->prepare("SELECT * FROM utilisateur WHERE email=?");
     $stmt->execute([$email]); 
     $validEmail = $stmt->fetch();
+    $_SESSION['mdp']=$mot_de_passec;
 
     if (isset($_POST['nom'], $_POST['prénom'], $_POST['email'], $_POST['téléphone'], $_POST['adresse'])) {
         if (empty($_POST['nom']) || empty($_POST['prénom']) || empty($_POST['email']) || empty($_POST['téléphone']) || empty($_POST['adresse'])) {
@@ -55,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
 
             $statement = $link->prepare("INSERT INTO utilisateur (nom, prénom, email, téléphone, adresse, mot_de_passe, userType, idHopital) VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
-            $result =$statement->execute( [$nom, $prénom, $email, $téléphone, $adresse, $mot_de_passe, $médecin, $hopital]);
+            $result =$statement->execute( [$nom, $prénom, $email, $téléphone, $adresse, md5($mot_de_passe), $médecin, $hopital]);
             if ($result) {
                 echo "c'est bon";
                 mail($email, $sujet, $corp, $headers);

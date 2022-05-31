@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
 
             $statement = $link->prepare("INSERT INTO utilisateur (nom, prénom, email, téléphone, adresse, mot_de_passe, userType, idHopital) VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
-            $result =$statement->execute( [$nom, $prénom, $email, $téléphone, $adresse, $mot_de_passe, $parent, $hopital]);
+            $result =$statement->execute( [$nom, $prénom, $email, $téléphone, $adresse, md5($mot_de_passe), $parent, $hopital]);
             if ($result) {
                 echo "c'est bon";
                 mail($email, $sujet, $corp, $headers);

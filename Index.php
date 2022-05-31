@@ -15,8 +15,8 @@
     <link rel="icon" href="image/logo_infinte_measure.png">
     <title>Infinite Measure</title>
 </head>
+<?php include("header.php")   ?>
 
- <?php include("header.php")   ?>
 <body>
 
     <div class="test-contenu">

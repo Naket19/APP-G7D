@@ -1,6 +1,5 @@
 <?php
 
-session_start();
 $bdd = new PDO('mysql:host=localhost; dbname=app-g7d;', 'root', '');
 $alluser = $bdd->query('SELECT * FROM utilisateur WHERE userType="parent" OR userType="medecin"  ORDER BY idUser ');
 if (isset($_GET['s']) and !empty($_GET['s'])) {
@@ -10,7 +9,6 @@ if (isset($_GET['s']) and !empty($_GET['s'])) {
 }
 
 $arrayUser = array();
-
 
 ?>
 
@@ -29,6 +27,7 @@ $arrayUser = array();
     <link rel="icon" href="image/logo_infinte_measure.png">
     <title>Infinite Measure</title>
 </head>
+
 <?php include("headerAdmin.php")   ?>
 
 <body>
