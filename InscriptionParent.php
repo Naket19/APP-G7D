@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require "PHP/config.php";
 $link = DbConnect();
 if(!$_SESSION["loggedin"]){
