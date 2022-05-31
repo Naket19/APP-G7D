@@ -36,6 +36,7 @@ $prénom = "user";
         }
 ?>
 <body>
+    <h1> azy </h1>
     <div class="container"> 
             <div id="sidebar">
                 <div class="noms_onglets">
@@ -255,11 +256,11 @@ $prénom = "user";
     </div>
     <script src="Data.js"></script>
 
-            <footer>
-                <a href="P_nousContacter.php">Nous contacter</a>
-                <a href="mentions_légales.html">Mentions légales</a>
-                <a href="">&copy;INFINITE MEASURE</a>
-            </footer>
+        <footer>
+            <a href="P_nousContacter.php">Nous contacter</a>
+            <a href="mentions_légales.html">Mentions légales</a>
+            <a href="">&copy;INFINITE MEASURE</a>
+        </footer>
             <script src="app.js">
                  function disconnect(){
             var txt;
