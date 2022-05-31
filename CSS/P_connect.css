@@ -10,11 +10,9 @@ body{
     font-family: 'Poppins'; 
 }
 
-
 /* haut de page  */
 
 header{
-    /* background: rgb(174, 162, 162); */
     background: url(../image/back-ecriture.png);  
 }
 
@@ -22,15 +20,15 @@ nav{
     align-items: center; 
     margin-left: 3%;
     display: inline-flex;
-    justify-content: space-between;
+    justify-content:space-between;
     width: 90%;
     height: 97px;
     
 }
 
 .acc-menu a {
-   
-    justify-content: space-between;
+
+    justify-content:space-between;
     text-decoration: none;
     color: white;
     font-size: 16px;
@@ -40,8 +38,9 @@ nav{
 }
 nav img{
     display: inline-flex;
-    width: 80px;
-    height: 10vh;
+    max-width: 100%;
+    width: 12vh;
+    height: auto;
     border-radius: 10px;
     margin-top: 5px;
     margin-right: 5px;
@@ -53,8 +52,7 @@ nav img{
 }
 nav button{
     padding: 8px;
-    border-radius: 10px;
-    
+    border-radius: 10px;  
 }
 nav button a {
     text-decoration: none;
@@ -68,6 +66,7 @@ nav button a {
 .connect{
     display:none;
 }
+.button:hover{ cursor: pointer;}
 
 
 /* contenu */
@@ -208,7 +207,14 @@ footer a{
     padding-right: 20px;
     padding-left: 20px;
 }   
+
+
 @media screen and (max-width: 1270px) {
+
+    .button{
+        display:none;
+    }
+
     body{
         background-size: cover;
         background-repeat: no-repeat;
