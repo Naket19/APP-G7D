@@ -11,7 +11,12 @@
             $bannirEnfant->execute(array($getid));
             $bannirUser = $bdd->prepare('DELETE FROM utilisateur WHERE idUser = ?');
             $bannirUser->execute(array($getid));
+            
+            if($_SESSION['userType']=="admin"){
             header('Location: P_admin.php');
+            }elseif($_SESSION['userType']=="médecin"){
+                header('Location: P_medecin.php');
+            }
         }else{
             echo "Aucun membre n'a été trouvé";
         }

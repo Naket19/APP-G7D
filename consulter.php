@@ -18,16 +18,16 @@ use LDAP\Result;
         $resultatReq= array();
         $mysqli = mysqli_connect('localhost','root','','app-g7d');
         
-        $sql='SELECT nom,prénom,adresse,téléphone,email FROM utilisateur WHERE idUser = '.$idConsulting.'';
+        $sql='SELECT nom,prénom,adresse,téléphone,email,userType FROM utilisateur WHERE idUser = '.$idConsulting.'';
         
         if($stmt =mysqli_prepare($mysqli,$sql))
         {
             if(mysqli_stmt_execute($stmt))
             {
-                $nom=$prenom=$adresse=$telephone=$email="";
+                $nom=$prenom=$adresse=$telephone=$email=$userType="";
 
                 mysqli_stmt_store_result($stmt);
-                mysqli_stmt_bind_result($stmt,$nom,$prenom,$adresse,$telephone,$email);
+                mysqli_stmt_bind_result($stmt,$nom,$prenom,$adresse,$telephone,$email,$userType);
                 if(mysqli_stmt_fetch($stmt))
                 {
                     $resultatReq['nom']= $nom;
@@ -35,6 +35,7 @@ use LDAP\Result;
                     $resultatReq['adresse']= $adresse;
                     $resultatReq['telephone']= $telephone;
                     $resultatReq['email']= $email;
+                    $resultatReq['userType']=$userType;
                 }
             }
             
@@ -90,7 +91,8 @@ use LDAP\Result;
     </header>
     <div class="info">
         <h1>Visualisation de compte</h1>
-        <p> Nom : <?=  $resultatReq['nom']?><br><br>
+        <p> Type : <?=  $resultatReq['userType']?><br><br>
+            Nom : <?=  $resultatReq['nom']?><br><br>
             Prénom : <?= $resultatReq['prenom']?><br><br>
             Téléphone : <?= $resultatReq['telephone']?><br><br>
             Adresse : <?= $resultatReq['adresse']?><br><br>

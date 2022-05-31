@@ -2,11 +2,13 @@
 require "PHP/config.php";
 $link = DbConnect();
 session_start();
-if(!$_SESSION['mdp']){
-    header('Location: connexion.php');
-}
+
 $nom=$_SESSION['nom'];
 $prénom=$_SESSION['prénom'];
+
+if(!$_SESSION["loggedin"]){
+    header('Location: connexion.php');
+}
 
 if(isset($_POST['deconnexion'])){
     session_destroy();

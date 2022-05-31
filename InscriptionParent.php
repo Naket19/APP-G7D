@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($result) {
                 echo "c'est bon";
                 mail($email, $sujet, $corp, $headers);
-                header('Location: P_admin.php');
+                header('Location: P_medecin.php');
             } else {
                 print $link->error;
             }

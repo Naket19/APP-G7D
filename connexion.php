@@ -38,9 +38,13 @@ if(isset($_POST['connexion'])){
                     $_SESSION['userType'] = $resultat['userType'];
                     
                     echo "Vous êtes à présent connecté !";
+                    echo $resultat['userType'];
 
                     if($resultat['userType']=="parent"){
+
                         header('Location: accueil_client.php');
+                        echo "Vous êtes à présent connecté !";
+
                         
                     }elseif($resultat['userType']=="médecin"){
                         header('Location: P_medecin.php');
