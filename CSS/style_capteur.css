@@ -2,10 +2,11 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'poppins';
   }
   body{
   color: black;
-  font-family: poppins;
+  font-family: "poppins";
   }
 
   header{
@@ -105,6 +106,7 @@ nav img{
     padding: 20px;
   }
   .contenu hr {
+    position: absolute;
     width: 20%;
     height: 2px;
     margin-left: 20px;
@@ -114,6 +116,7 @@ nav img{
   .contenu h2{
   margin-top: 2vh;
   font-size: 28px;
+  
   }
   .contenu p1{
   font-size: 20px;
@@ -149,7 +152,7 @@ nav img{
   .container{
    
     max-width: 2000px;
-    font-family: "Quicksand";
+    font-family: "poppins";
   
   }
   
@@ -236,7 +239,7 @@ nav img{
   
   max-width: 2000px;
   margin:20px;
-  font-family: "Quicksand";
+  font-family: "poppins";
   
   }
   .row{
