@@ -15,7 +15,7 @@ if(isset($_POST['deconnexion'])){
         session_destroy();
     // ne marche pas 
 }
-if(!$_SESSION['mdp']){
+if(!$_SESSION["loggedin"]){
     header('Location: connexion.php');
 }
 

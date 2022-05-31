@@ -101,9 +101,16 @@ form input{
 }
 
 table
-{
-    margin: 2%;
+{   
+    display: flex;
+    flex-direction: row;
+    height: 272px;
+    border: solid 3px;
+    margin-top: 5%;
+    overflow: auto;
+    justify-content: center;
     border-collapse: collapse;
+    width: 50%;
 }
 td, th /* Mettre une bordure sur les td ET les th */
 {
@@ -113,6 +120,7 @@ td, th /* Mettre une bordure sur les td ET les th */
 
 /* footer */
 footer{
+    
     display: flex;
     justify-content: space-between;
     flex-shrink: 0;
