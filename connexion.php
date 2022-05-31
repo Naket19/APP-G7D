@@ -5,8 +5,7 @@ $link = DbConnect();
 if(isset($_POST['connexion'])){
     $email = $_POST["email"];
     $mot_de_passec = $_POST["mot_de_passe"];
-    $mot_de_passe =md5($mot_de_passec);
-
+    $mot_de_passe =$mot_de_passec;
     $medecin="médecin";
     $parent="parent";
     $admin ="admin";
@@ -16,21 +15,19 @@ if(isset($_POST['connexion'])){
     } else {
         if(empty($_POST['mot_de_passe'])){
             echo "Le champ Mot de passe est vide.";
-        } else {
-            
-            
-            
+        } else {                         
             if(!$link){
                 echo "Erreur de connexion à la base de données.";
             } else {
                 $Requete = $link->prepare("SELECT * FROM utilisateur WHERE email = :email AND mot_de_passe = :mot_de_passe");
-                $Requete->execute(array('email'=> $email,'mot_de_passe'=>md5($mot_de_passe)));
+                $Requete->execute(array('email'=> $email,'mot_de_passe'=>$mot_de_passe));
                 $resultat = $Requete->fetch();
                 if(!$resultat) {
                     echo "Le pseudo ou le mot de passe est incorrect, le compte n'a pas été trouvé.";
                 } else {
                     session_start();
                     $_SESSION["loggedin"]=true;
+                    $_SESSION["idUser"]=$resultat['userId'];
                     $_SESSION['nom'] = $resultat['nom'];
                     $_SESSION['prénom'] = $resultat['prénom'];
                     $_SESSION['email'] = $email;

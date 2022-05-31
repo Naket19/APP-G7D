@@ -36,7 +36,7 @@ if(!$_SESSION["loggedin"]){
         <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="CSS/responsive.css">
     <link rel="icon" href="image/logo_infinte_measure.png">
-    <title>Infinite Measure</title>
+    <title>Profil</title>
 </head>
 
 <?php 
@@ -78,8 +78,16 @@ if(!$_SESSION["loggedin"]){
                 <div class="encadrer">
                     Telephone: <?php echo $tel ?>
                 </div>
+                <div >
+                <input class="button" type="button" onclick="window.location.href='modifierProfil.php';" value='Modifier votre profil'
+                style='background:rgb(101, 137, 244); padding:15px;border-radius: 10px;
+                border: rgba(48, 48, 48, 0.5) solid 2px;
+                box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);'/>
+                </div>
             </div>
+            
         </div>
+        
     </div>
     <footer>
         <a href="P_nousContacter.php">Nous contacter</a>
