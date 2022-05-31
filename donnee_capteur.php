@@ -36,7 +36,6 @@ $prénom = "user";
 ?>
 <<<<<<< HEAD
 <body>
-    <h1> azy </h1>
 =======
 <body style="font-family: 'poppins'">
 >>>>>>> 70169639a3394bf71e2f88fd5b5637ab51f003de
