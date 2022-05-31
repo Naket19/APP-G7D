@@ -11,7 +11,7 @@
         <div class="acc-menu">
             <a href="Index.php">Accueil</a>
             <a href="P_faq.php">FAQ</a>
-            <a href="applilud.html">Application Ludique</a>
+            <a href="applilud.php">Application Ludique</a>
             <a class="connect" href="connexion.php" >Connexion</a>
         </div>
             <input class="button" type="button" onclick="window.location.href='connexion.php';"value='Connexion'
