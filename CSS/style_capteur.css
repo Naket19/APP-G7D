@@ -2,13 +2,54 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'poppins';
   }
   body{
-    margin: 0 auto;
-    background: url(../image/background.png);
-    background-size: cover; 
-    font-family: 'Poppins';
-    font-size: 22px;
+  color: black;
+  font-family: "poppins";
+  }
+
+  header{
+    /* background: rgb(174, 162, 162); */
+    background: url(../image/back-ecriture.png);  
+}
+
+nav{
+    align-items: center; 
+    margin-left: 3%;
+    display: inline-flex;
+    justify-content: space-between;
+    width: 90%;
+    height: 97px;
+    
+}
+nav button{
+    padding: 8px;
+    border-radius: 10px;
+    
+}
+.acc-menu a {
+   
+    justify-content: space-between;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    align-items: center;
+    padding: 32px;
+
+}
+nav img{
+    display: inline-flex;
+    width: 80px;
+    height: 10vh;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.acc-menu a:hover{
+    background: rgb(237, 238, 241);
+    color: black;
 }
 
 
@@ -110,7 +151,7 @@
   .container{
    
     max-width: 2000px;
-    font-family: "Quicksand";
+    font-family: "poppins";
   
   }
   
@@ -153,12 +194,7 @@
   
   
   }
-  
-  
-  
-  
-  
-  
+
   /*Responsive*/
   
   @media only screen and (max-width: 1050px) {
@@ -201,7 +237,7 @@
   
   max-width: 2000px;
   margin:20px;
-  font-family: "Quicksand";
+  font-family: "poppins";
   
   }
   .row{

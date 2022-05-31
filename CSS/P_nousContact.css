@@ -69,12 +69,13 @@ nav button a {
     flex:1 0 auto; 
     min-height: 100%; 
     position: relative; 
-    margin:2% auto;
-    
+    margin: 2% auto;
+
 }
 .form-page{
     margin: 2%;
     justify-content: center;
+    display: flex;
     /* margin-top: 2%;
     margin-bottom: 2%;
      */
