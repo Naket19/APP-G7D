@@ -29,50 +29,9 @@ $arrayUser = array();
     <link rel="icon" href="image/logo_infinte_measure.png">
     <title>Infinite Measure</title>
 </head>
+<?php include("headerAdmin.php")   ?>
 
 <body>
-    <header>
-
-        <nav>
-            <img src="image/logo_infinte_measure.png" alt="">
-            <div class="toggle">
-                <i class="fa-solid fa-bars ouvrir"></i>
-                <i class="fa-solid fa-circle-xmark fermer"></i>
-            </div>
-            <div class="acc-menu">
-                <a href="P_admin.php">Tableau de bord</a>
-                <a href="Inscription.php">Inscription d'un médecin</a>
-                <?php
-                if (isset($_SESSION["loggedin"])) {
-                ?>
-                    <a href="Profil.html">Mon compte</a>
-                    <a class="connect" onclick="disconnect">Déconnexion</a>
-                <?php
-                } else {
-                ?>
-                    <a class="connect" href="connexion.php">Connexion</a>
-                <?php
-                }
-                ?>
-            </div>
-            <?php
-            if (isset($_SESSION["loggedin"])) {
-            ?><a class="mon-compte" href="Profil.php">Mon Compte</a>
-                <input type="button" onclick="disconnect" value='Déonnexion' style='background:rgb(101, 137, 244); padding:15px;border-radius: 10px;
-                border: rgba(48, 48, 48, 0.5) solid 2px;
-                box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);' />
-            <?php
-            } else {
-            ?>
-                <input type="button" onclick="window.location.href='connexion.php';" value='Connexion' style='background:rgb(101, 137, 244); padding:15px;border-radius: 10px;
-                border: rgba(48, 48, 48, 0.5) solid 2px;
-                box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);' />
-            <?php
-            }
-            ?>
-
-        </nav>
-    </header>
     <div class="border">
         <div class="slt">
             <p> Bonjour admin ! </p>
@@ -130,9 +89,7 @@ $arrayUser = array();
             }
             ?>
         </table>
-        <br><br>
-                <button onclick="window.location.href = 'inscriptionEnfant.php';" >Ajouter un enfant</button>  <br><br>
-                <button onclick="window.location.href = 'inscriptionParent.php';">Ajouter un parent</button>
+
     </div>
 
     <div class="bout">

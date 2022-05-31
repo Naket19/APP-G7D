@@ -7,77 +7,20 @@ body{
     font-family: poppins;
 }
 
-/* haut de page  */
-
-header{
-    /* background: rgb(174, 162, 162); */
-    background: url(../image/back-ecriture.png);  
-}
-
-nav{
-    align-items: center; 
-    margin-left: 3%;
-    display: inline-flex;
-    justify-content: space-between;
-    width: 90%;
-    height: 97px;
-    
-}
-
-.acc-menu a {
-   
-    justify-content: space-between;
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-    align-items: center;
-    padding: 32px;
-
-}
-nav img{
-    display: inline-flex;
-    width: 80px;
-    height: 10vh;
-    border-radius: 10px;
-    margin-top: 5px;
-    margin-right: 5px;
-}
-
-.acc-menu a:hover{
-    background: rgb(237, 238, 241);
-    color: black;
-}
-nav button{
-    padding: 8px;
-    border-radius: 10px;
-    
-}
-nav button a {
-    text-decoration: none;
-}
-.connexion{
-    display: none;
-}
-.toggle{
-    display:none;
-}
-.connect{
-    display:none;
-}
-.b_connect a {
-    text-decoration: none;
-    color: black;
-}
 
 /* corps de page */
 .border{
     background-color: aliceblue;
-    padding: 4%;
+    padding: 2%;
     margin:3%;
+    height: 64vh;
     border-radius: 10px;
 
 }
 
+.border h3{
+    text-align: center;
+}
 form {
     display: flex;
     justify-content: center;
@@ -99,23 +42,37 @@ form input{
     border: rgba(48, 48, 48, 0.5) solid 2px;
     box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
 }
-
+.b_envoie:hover{
+    cursor: pointer;
+}
 table
 {   
+    margin-left: 12.5%;
+    width: 75%;
     display: flex;
     flex-direction: row;
-    height: 272px;
+    height: 270px;
     border: solid 3px;
-    margin-top: 5%;
+    margin-top: 2%;
     overflow: auto;
     justify-content:center;
     border-collapse: collapse;
-    width: 50%;
 }
 td, th /* Mettre une bordure sur les td ET les th */
 {
+    width: 350px;
     border: 2px solid black;
-    padding: 22px;
+    padding: 25px;
+}
+button:hover{
+    cursor: pointer;
+}
+button{
+    padding: 6px;
+    text-align: center;
+    background-color: rgb(101, 137, 244);
+    border: rgba(48, 48, 48, 0.5) solid 2px;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
 }
 
 /* footer */
