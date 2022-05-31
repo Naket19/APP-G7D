@@ -44,6 +44,12 @@ use LDAP\Result;
         
         }
         mysqli_close($mysqli);
+
+    
+    
+    
+
+  
 ?>
 
 <!DOCTYPE html>
@@ -62,20 +68,27 @@ use LDAP\Result;
     <link rel="icon" href="image/logo_infinte_measure.png">
     <title>Infinite Measure</title>
 </head>
-
-<?php 
-        if($_SESSION['userType']=="médecin"){
-            include("headerMedecin.php");
-            
-        }else{
-            include("headerAdmin.php");
-            
-        }
-?>
-
-
-
 <body>
+    <header>
+        
+        <nav>
+            <img src="image/logo_infinte_measure.png" alt="">
+            <div class="toggle">
+                <i class="fa-solid fa-bars ouvrir"></i>
+                <i class="fa-solid fa-circle-xmark fermer"></i>
+            </div>
+            <div class="acc-menu">
+                <a href="P_admin.php">Tableau de bord</a>
+                <a href="Inscription.php">Inscription</a>
+                <div class="connect"><a href="connexion.php">Connexion</a></div>
+                
+            </div>
+            <button style='background:rgb(101, 137, 244); padding:15px;
+                border: rgba(48, 48, 48, 0.5) solid 2px;
+                box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);'
+            ><a href="connexion.php" style='text-decoration:none;color:black;'> Déconnexion</a></button>
+        </nav>
+    </header>
     <div class="info">
         <h1>Visualisation de compte</h1>
         <p> Type : <?=  $resultatReq['userType']?><br><br>

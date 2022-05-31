@@ -15,7 +15,7 @@ function mediaParent(){
 
     while($state = $statement->fetch()){
         extract($state);
-        echo "<option value='$idUser'>Nom : $nom | Prénom : $prénom | Email : $email</option>";
+        echo "<option value='$idUser'>$nom,$prénom,$email</option>";
     }
 }
 
@@ -80,10 +80,52 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="script.js" defer></script>
     <title>Mon site - Ajout d'enfant</title>
 </head>
-<?php include("headerMedecin.php")   ?>
 
 <body>
-    
+    <header>
+        
+        <nav>
+            <img src="image/logo_infinte_measure.png" alt="">
+            <div class="toggle">
+                <i class="fa-solid fa-bars ouvrir"></i>
+                <i class="fa-solid fa-circle-xmark fermer"></i>
+            </div>
+            <div class="acc-menu">
+                <a href="P_medecin.php">Tableau de bord</a>
+                <a href="InscriptionParent.php">Inscription</a>
+                <?php 
+                if(isset ($_SESSION["loggedin"])){
+                ?>
+                    <a href="Profil.html">Mon compte</a>
+                    <a class="connect" onclick="disconnect" >Déconnexion</a>
+                <?php
+                } else{
+                    ?>
+                    <a class="connect" href="connexion.php" >Connexion</a>
+                    <?php
+                }
+                ?>
+            </div>
+            <?php 
+            if(isset ($_SESSION["loggedin"])){
+                ?><a class="mon-compte" href="Profil.php">Mon Compte</a>
+                    <input type="button" onclick="disconnect"value='Déonnexion'
+                style='background:rgb(101, 137, 244); padding:15px;border-radius: 10px;
+                border: rgba(48, 48, 48, 0.5) solid 2px;
+                box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);'/>
+            <?php
+            } else{
+                ?> 
+                <input type="button" onclick="window.location.href='connexion.php';"value='Connexion'
+                style='background:rgb(101, 137, 244); padding:15px;border-radius: 10px;
+                border: rgba(48, 48, 48, 0.5) solid 2px;
+                box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);'/>
+                <?php
+            }
+            ?>
+            
+        </nav>
+    </header>
     <div class="F_contenu">
         <div class="text-title">
             <h1>Ajout d'un enfant</h1>
