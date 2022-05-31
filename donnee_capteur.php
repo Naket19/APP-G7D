@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 $lastCard = 0;
 $lastSon = 0 ;
 $lastTemp = 0;
@@ -69,7 +68,7 @@ $prénom = "user";
                     <div class="imgStat"></div>
                     <h2>Statistiques de <?php echo $prénom; ?></h2>
                     <p1><br><br><br><br><br>Consultez les données de votre enfants en direct via cette rubrique</p1>
-                    <h4><br><br><br><br><br><br><br><br><br><br><br>Seuils :</h4>
+                    <h4><br><br>Seuils :</h4>
                     <p><br>Fréquence cardiaque : La fréquence cardiaque de votre enfant devrait être entre 90 Bpm et 190 Bpm</p>
                     <p><br>Niveau sonore : Le niveau sonore est sans risque en dessous de 90 dB.</p>
                     <p><br>Température : La temprérature ambiante idéale se situe entre 18°C et 22°C</p>
