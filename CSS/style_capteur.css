@@ -2,10 +2,11 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'poppins';
   }
   body{
   color: black;
-  font-family: poppins;
+  font-family: "poppins";
   }
 
   header{
@@ -150,7 +151,7 @@ nav img{
   .container{
    
     max-width: 2000px;
-    font-family: "Quicksand";
+    font-family: "poppins";
   
   }
   
@@ -236,7 +237,7 @@ nav img{
   
   max-width: 2000px;
   margin:20px;
-  font-family: "Quicksand";
+  font-family: "poppins";
   
   }
   .row{
