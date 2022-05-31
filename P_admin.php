@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 $bdd = new PDO('mysql:host=localhost; dbname=app-g7d;', 'root', '');
 $alluser = $bdd->query('SELECT * FROM utilisateur WHERE userType="parent" OR userType="medecin"  ORDER BY idUser ');
 if (isset($_GET['s']) and !empty($_GET['s'])) {
@@ -32,7 +33,7 @@ $arrayUser = array();
 <body>
     <div class="border">
         <div class="slt">
-            <p> Bonjour admin ! </p>
+            <p> Bonjour <?php echo $_SESSION['nom']." ".$_SESSION['prénom']; ?> ! </p>
         </div>
         <div class="barre_recherche">
             <form method="GET">

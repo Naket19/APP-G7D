@@ -34,7 +34,7 @@ $arrayUser = array();
 <body>
     <div class="border">
         <div class="slt">
-            <p> Bonjour docteur ! </p>
+        <p> Bonjour <?php echo $_SESSION['nom']." ".$_SESSION['prénom']; ?> ! </p>
         </div>
         <div class="barre_recherche">
             <form method="GET">
