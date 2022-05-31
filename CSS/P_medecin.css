@@ -114,6 +114,7 @@ table
 }
 td, th /* Mettre une bordure sur les td ET les th */
 {
+    width: 200px;
     border: 2px solid black;
     padding: 22px;
 }
