@@ -26,7 +26,6 @@ nav{
 nav button{
     padding: 8px;
     border-radius: 10px;
-    
 }
 .acc-menu a {
    
@@ -81,7 +80,7 @@ nav img{
   position: absolute;
   top: 2.5vh;
   margin: 2.5vh;
-
+ 
   
         
   }
@@ -97,7 +96,7 @@ nav img{
   background-color: #fbfbfb;
   opacity: 0;
   border-radius: 10px;
-  /*box-shadow: 0 15px 50px rgba(0,0,.2);*/
+  /* box-shadow: 0 15px 50px rgba(0,0,.2); */
   padding: 10px;
   color: url(../image/back-ecriture.png);
   }
@@ -107,6 +106,7 @@ nav img{
     padding: 20px;
   }
   .contenu hr {
+    position: absolute;
     width: 20%;
     height: 2px;
     margin-left: 20px;
@@ -116,6 +116,7 @@ nav img{
   .contenu h2{
   margin-top: 2vh;
   font-size: 28px;
+  
   }
   .contenu p1{
   font-size: 20px;
@@ -194,6 +195,7 @@ nav img{
   
   
   }
+
 
   /*Responsive*/
   
