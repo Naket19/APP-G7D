@@ -35,7 +35,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = $link->prepare("SELECT * FROM utilisateur WHERE email=?");
     $stmt->execute([$email]); 
     $validEmail = $stmt->fetch();
-    $_SESSION['mdp']=$mot_de_passec;
 
     if (isset($_POST['nom'], $_POST['prénom'], $_POST['email'], $_POST['téléphone'], $_POST['adresse'])) {
         if (empty($_POST['nom']) || empty($_POST['prénom']) || empty($_POST['email']) || empty($_POST['téléphone']) || empty($_POST['adresse'])) {
