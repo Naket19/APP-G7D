@@ -29,8 +29,6 @@ $arrayUser = array();
 </head>
 <?php include("headerAdmin.php")   ?>
 
-<?php include("headerAdmin.php")   ?>
-
 <body>
     <div class="border">
         <div class="slt">
