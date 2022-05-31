@@ -30,7 +30,7 @@
                 <a href="P_faq.html">FAQ</a>
                 <a href="applilud.html">Application Ludique</a>
                 <?php 
-                if(isset ($SESSION["loggedin"])){
+                if(isset ($_SESSION["loggedin"])){
                 ?>
                     <a href="donnee_capteur.php">Données Capteurs</a>
                     <a href="Profil.html">Mon compte</a>
