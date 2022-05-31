@@ -1,3 +1,8 @@
+<?php 
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -24,7 +29,18 @@
                 <i class="fa-solid fa-circle-xmark fermer"></i>
             </div>
             <div class="acc-menu">
-                <a href="Index.php">Accueil</a>
+
+                <?php  if($_SESSION["loggedin"]){
+                    echo '<a href="accueil_client.php">Accueil</a>';
+                    echo'<a href="deconnexion.php">Deconnexion</a>';
+                }else{
+                    echo'<a href="Index.php">Accueil</a>';
+
+
+
+                }
+                    
+                    ?>
                 <a href="P_faq.php">FAQ</a>
                 <a href="applilud.html">Application Ludique</a>
                 <?php 

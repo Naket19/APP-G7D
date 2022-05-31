@@ -43,9 +43,9 @@ if(isset($_POST['deconnexion'])){
                 <i class="fa-solid fa-circle-xmark fermer"></i>
             </div>
             <div class="acc-menu">
-                <a href="Index.php">Accueil</a>
+                <a href="accueil_client.php">Accueil</a>
                 
-                <a href="P_faq.html">FAQ</a>
+                <a href="P_faq.php">FAQ</a>
                 <a href="applilud.html">Application Ludique</a>
                 <?php 
                 if(isset ($SESSION["loggedin"])){
