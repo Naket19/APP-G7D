@@ -5,34 +5,87 @@ body{
     background-size: 100%;
     font-family: 'Poppins';
 }
+/* haut de page  */
 
-.centredepage{
-  left: 20%;
-  position: relative;
-  margin:3%;
-  box-shadow: 1px 1px 12px #555;
-  border-radius: 5%;
-  width: 100vh; 
-  height: 70vh;
-  opacity: 0.9;
-  background-color: aliceblue;
+header{
+  /* background: rgb(174, 162, 162); */
+  background: url(../image/back-ecriture.png);  
+}
+
+nav{
+  align-items: center; 
+  margin-left: 3%;
+  display: inline-flex;
+  justify-content: space-between;
+  width: 90%;
+  height: 97px;
   
 }
-.parent {
-  height: 100%;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
 
-  }
-  .parent input {
-    position: absolute;
-    opacity: 0;
-    z-index: -1;
-  }
+.acc-menu a {
+ 
+  justify-content: space-between;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  align-items: center;
+  padding: 32px;
+
+}
+nav img{
+  display: inline-flex;
+  width: 80px;
+  height: 10vh;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.acc-menu a:hover{
+  background: rgb(237, 238, 241);
+  color: black;
+}
+nav button{
+  padding: 8px;
+  border-radius: 10px;
+  
+}
+nav button a {
+  text-decoration: none;
+}
+.connexion{
+  display: none;
+}
+.toggle{
+  display:none;
+}
+.connect{
+  display:none;
+}
+
+
+.centredepage{
+    left: 20%;
+    position: relative;
+    margin:3%;
+    box-shadow: 1px 1px 12px #555;
+    border-radius: 5%;
+    width: 100vh; 
+    height: 70vh;
+    opacity: 0.9;
+    background-color: aliceblue;
+    
+}
+.parent {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+
+    }
     
 .lafaq { 
     margin: auto;
@@ -56,6 +109,13 @@ body{
 }
 
 
+  
+  input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+  
   .row {
     display: flex;
   }
