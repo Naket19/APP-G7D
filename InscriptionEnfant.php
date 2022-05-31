@@ -2,7 +2,9 @@
 
 require "PHP/config.php";
 $link = DbConnect();
-
+if(!$_SESSION["loggedin"]){
+    header('Location: connexion.php');
+}
 //Verification des champs
 
 function mediaParent(){

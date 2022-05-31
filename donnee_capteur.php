@@ -5,6 +5,10 @@ $lastSon = 0 ;
 $lastTemp = 0;
 $lastCO2 = 0;
 $prénom = "user";
+if(!$_SESSION["loggedin"]){
+    header('Location: connexion.php');
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
