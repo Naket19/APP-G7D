@@ -72,12 +72,16 @@ nav button a {
 /* corps de page */
 .border{
     background-color: aliceblue;
-    padding: 4%;
+    padding: 2%;
     margin:3%;
+    height: 64vh;
     border-radius: 10px;
 
 }
 
+.border h3{
+    text-align: center;
+}
 form {
     display: flex;
     justify-content: center;
@@ -99,24 +103,37 @@ form input{
     border: rgba(48, 48, 48, 0.5) solid 2px;
     box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
 }
-
+.b_envoie:hover{
+    cursor: pointer;
+}
 table
 {   
+    margin-left: 12.5%;
+    width: 75%;
     display: flex;
     flex-direction: row;
-    height: 272px;
+    height: 270px;
     border: solid 3px;
-    margin-top: 5%;
+    margin-top: 2%;
     overflow: auto;
     justify-content:center;
     border-collapse: collapse;
-    width: 50%;
 }
 td, th /* Mettre une bordure sur les td ET les th */
 {
-    width: 200px;
+    width: 350px;
     border: 2px solid black;
-    padding: 22px;
+    padding: 25px;
+}
+button:hover{
+    cursor: pointer;
+}
+button{
+    padding: 6px;
+    text-align: center;
+    background-color: rgb(101, 137, 244);
+    border: rgba(48, 48, 48, 0.5) solid 2px;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
 }
 
 /* footer */

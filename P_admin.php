@@ -41,7 +41,7 @@ $arrayUser = array();
             </div>
             <div class="acc-menu">
                 <a href="P_admin.php">Tableau de bord</a>
-                <a href="Inscription.php">Inscription d'un médecin</a>
+                <a href="Inscription.php">Inscription médecin</a>
                 <?php
                 if (isset($_SESSION["loggedin"])) {
                 ?>
@@ -131,8 +131,11 @@ $arrayUser = array();
             ?>
         </table>
         <br><br>
-                <button onclick="window.location.href = 'inscriptionEnfant.php';" >Ajouter un enfant</button>  <br><br>
+            <div class="but_page">
+                <button style="margin-right:20px;" onclick="window.location.href = 'inscriptionEnfant.php';" >Ajouter un enfant</button>
                 <button onclick="window.location.href = 'inscriptionParent.php';">Ajouter un parent</button>
+            </div>
+                
     </div>
 
     <div class="bout">
