@@ -5,21 +5,16 @@ session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $userId = $_SESSION['idUser'];
     $email = $_POST["newEmail"];
     $oldmot_de_passe = $_POST["oldmdp"];
     $mot_de_passe = $_POST["mot_de_passe"];
     $mot_de_passe1 = $_POST["newmdp1"];
-    $resultatReq= array();
-    $arrayUser['idUser'] = $_SESSION['idUser'];
-
-    
-    $stmt = $link->prepare("SELECT * FROM utilisateur WHERE email=? AND idUser <> ?");
-    $stmt->execute([$email,$userId]); 
+    $stmt = $link->prepare("SELECT email FROM utilisateur WHERE email=? AND idUser <> ?");
+    $stmt->execute([$email,$_SESSION['idUser']]); 
     $validEmail = $stmt->fetch(); 
-
+  
     $req1 = $link->prepare("SELECT * FROM utilisateur WHERE idUser = ?");
-    $req1->execute([$arrayUser['idUser']]);
+    $req1->execute(array($_SESSION['idUser']));
     $req_user = $req1->fetch();
     $resultatReq['mot_de_passe']=$req_user['mot_de_passe'];
 
@@ -40,10 +35,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Le mot de passe doit être différent de l'ancien";
         }else{
             $statement = $link->prepare("UPDATE utilisateur SET email= ? , mot_de_passe= ? WHERE idUser = ? ") ;
-            $result = $statement->execute([$email, md5($mot_de_passe),$req_user['idUser']]);
+            $result = $statement->execute([$email, md5($mot_de_passe),$_SESSION['idUser']]);
             if ($result) {
-                echo "c'est bon";
                 header('Location: Profil.php');
+
             } else {
                // print $link->error;
             }
