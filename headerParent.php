@@ -10,7 +10,7 @@
         <div class="acc-menu">
             <a href="accueil_client.php">Accueil</a>
             <a href="P_faq.php">FAQ</a>
-            <a href="donnee_capteur.php">Données capteur</a>
+            <a href="donnee_capteur.php">Donnee capteur</a>
             <a href="applilud.html">Application Ludique</a>
             <a href="profil.php">Mon compte</a>
             <a class="connect" href="deconnexion.php">Déconnexion</a>
