@@ -27,7 +27,7 @@ if(isset($_POST['connexion'])){
                 } else {
                     session_start();
                     $_SESSION["loggedin"]=true;
-                    $_SESSION["idUser"]=$resultat['userId'];
+                    $_SESSION["idUser"]=$resultat['idUser'];
                     $_SESSION['nom'] = $resultat['nom'];
                     $_SESSION['prénom'] = $resultat['prénom'];
                     $_SESSION['email'] = $email;

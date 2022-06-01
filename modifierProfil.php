@@ -7,6 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $email = $_POST["newEmail"];
     $oldmot_de_passe = $_POST["oldmdp"];
+    $oldmot_de_passec = md5($_POST["oldmdp"]);
     $mot_de_passe = $_POST["mot_de_passe"];
     $mot_de_passe1 = $_POST["newmdp1"];
     $stmt = $link->prepare("SELECT email FROM utilisateur WHERE email=? AND idUser <> ?");
@@ -19,6 +20,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $resultatReq['mot_de_passe']=$req_user['mot_de_passe'];
 
     if (isset($_POST['newEmail'],$_POST['oldmdp'], $_POST['mot_de_passe'], $_POST['newmdp1'])) {
+        echo $req_user['mot_de_passe'] ;
+        echo "//hehe//";
+        echo md5($oldmot_de_passe);
+        echo "//hehe//";
+        echo $oldmot_de_passe;
+
 
         if (empty($_POST['newEmail']) ||empty($_POST['oldmdp']) ||empty($_POST['mot_de_passe']) || empty($_POST['newmdp1'])) {
             echo "Veuillez remplir tous les champs";
@@ -27,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Veuillez ecrire un mail valide";
         } elseif ($validEmail) {
             echo "Le mail est deja utilisé";
-        } elseif($req_user['mot_de_passe'] <> md5($oldmot_de_passe)) {
+        } elseif($req_user['mot_de_passe'] <> md5($oldmot_de_passec)) {
             echo "L'ancien mot de passe est incorrecte";
         }elseif($mot_de_passe <> $mot_de_passe1 ){
             echo "Le mot de passe et le mot de passe de confirmation sont different";
@@ -35,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Le mot de passe doit être différent de l'ancien";
         }else{
             $statement = $link->prepare("UPDATE utilisateur SET email= ? , mot_de_passe= ? WHERE idUser = ? ") ;
-            $result = $statement->execute([$email, md5($mot_de_passe),$_SESSION['idUser']]);
+            $result = $statement->execute([$email, md5(md5($mot_de_passe)),$_SESSION['idUser']]);
             if ($result) {
                 header('Location: Profil.php');
 
@@ -45,6 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 }
+
 
 
 
