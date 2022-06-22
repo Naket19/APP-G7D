@@ -1,13 +1,42 @@
 <?php
 session_start();
+require "PHP/config.php";
+$link = DbConnect();
 $lastCard = 0;
 $lastSon = 0 ;
 $lastTemp = 0;
 $lastCO2 = 0;
-$prénom = "user";
+
 if(!$_SESSION["loggedin"]){
     header('Location: connexion.php');
 }
+
+$idUser = $_SESSION["idUser"];
+
+$Requete = $link->prepare("SELECT * FROM patient WHERE idUser = ? ");
+$Requete->execute([$_SESSION['idUser']]);
+$resultat = $Requete->fetch();
+if(!$resultat){
+    echo"ca marche pas";
+
+}else{
+
+$idPatient=$resultat['idPatient'];
+$prénom = $resultat['prénom'];
+
+}
+
+$Requete = $link->prepare("SELECT * FROM capteur WHERE idPatient = ? ");
+$Requete->execute([$idPatient]);
+$resultat = $Requete->fetch();
+if(!$resultat){
+    echo"ca marche pas n2";
+
+}else{
+$type = $resultat['type'];
+$valeur = $resultat['valeur'];
+}
+
 
 ?>
 <!DOCTYPE html>
@@ -57,7 +86,7 @@ if(!$_SESSION["loggedin"]){
                     </div> <!--idem-->
                         <div class="onglets" data-anim="3">
                             <div class="ongletInactif bis">
-                                <h1>Température</h1><p><br><br>Dernière valeur : <?php echo $lastTemp; ?> °C</p>
+                                <h1>Température</h1><p><br><br>Dernière valeur : <?php echo $valeur; ?> °C</p>
                             </div> 
                         </div> <!--idem-->
                         <div class="onglets" data-anim="4">

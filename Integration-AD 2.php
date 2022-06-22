@@ -1,4 +1,7 @@
 <?php
+
+require "PHP/config.php";
+$link = DbConnect();
 //-----------Recuperer les donnees des logs depuis PHP
 #On utilise la bibliotheque cURL (client URL request library)
 $ch = curl_init();
@@ -39,6 +42,10 @@ echo $o;
 // decodage avec sscanf
 list($t, $o, $r, $c, $n, $v, $a, $x, $year, $month, $day, $hour, $min, $sec) = sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
 echo("<br />$t,$o,$r,$c,$n,$v,$a,$x,$year,$month,$day,$hour,$min,$sec<br />");
+echo $v;
+
+$statement = $link->prepare("INSERT INTO capteur (type, valeur,idPatient) VALUES(?, ?, ?)");
+$result =$statement->execute( [$n , $v , 19]);
 
 //$url = 'projets-tomcat.isep.fr:8080/appService?ACTION=COMMAND&TEAM=0001&TRAME='.$trame;
 // Envoyer une requete 
