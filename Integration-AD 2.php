@@ -33,7 +33,7 @@ for($i=0, $size=count($data_tab); $i<$size; $i++)
 //La fonction substr recupere une partie d’une chaine de caracteres
 //La fonction sscanf permet de definir comment se decompose la trame
 
-$trame = $data_tab[1];
+$trame = $data_tab[2];
 // decodage avec des substring
 $t = substr($trame,0,1);  // parameter (chain, starting point, length)
 $o = substr($trame,1,4); //
