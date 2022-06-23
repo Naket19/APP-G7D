@@ -61,6 +61,17 @@
                                 de l'environnement où il se trouve sont 
                                 bonnes.  
                             </p>
+                            <br>
+                            <button name="bleu" style='background:rgb(101, 137, 244); padding:15px;border-radius: 10px;
+                border: rgba(48, 48, 48, 0.5) solid 2px;
+                box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);'>
+                                <?php 
+                            $ch = curl_init();
+                            curl_setopt($ch,CURLOPT_URL, "http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G7_A&TRAME=1G7_D2201FFFF5B");
+                            $data = curl_exec($ch);
+                            curl_close($ch);
+                            ?>
+                            </button>
                         </div>
                     </div>
 
