@@ -6,16 +6,7 @@ session_start();
 $nom=$_SESSION['nom'];
 $prénom=$_SESSION['prénom'];
 
-$Requete = $link->prepare("SELECT * FROM patient WHERE idUser = ? ");
-$Requete->execute([$_SESSION['idUser']]);
-$resultat = $Requete->fetch();
-if(!$resultat){
-    echo"ca marche pas";
-}else{
 
-$_SESSION['idPatient']=$resultat['idPatient'];
-$_SESSION['prénomPatient'] = $resultat['prénom'];
-}
 
 
 if(!$_SESSION["loggedin"]){

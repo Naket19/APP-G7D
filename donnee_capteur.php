@@ -12,19 +12,28 @@ if(!$_SESSION["loggedin"]){
 }
 
 $idUser = $_SESSION["idUser"];
-$idPatient = $_SESSION['idPatient'];
-$prénom = $_SESSION['prénomPatient'];
 
 
-$Requete = $link->prepare("SELECT * FROM capteur WHERE idPatient = ? ");
-$Requete->execute([$idPatient]);
+$Requete = $link->prepare("SELECT * FROM patient WHERE idUser = ? ");
+$Requete->execute([$_SESSION['idUser']]);
 $resultat = $Requete->fetch();
 if(!$resultat){
+    echo"ca marche pas";
+}else{
+
+$idPatient= $resultat['idPatient'];
+$prénom = $resultat['prénom'];
+}
+
+$Requete1 = $link->prepare("SELECT * FROM capteur WHERE idPatient = ? ");
+$Requete1->execute([$idPatient]);
+$resultat1 = $Requete1->fetch();
+if(!$resultat1){
     echo"ca marche pas n2";
 
 }else{
-$type = $resultat['type'];
-$valeur = $resultat['valeur'];
+$type = $resultat1['type'];
+$valeur = $resultat1['valeur'];
 }
 
 
@@ -83,6 +92,12 @@ $valeur = $resultat['valeur'];
                             <div class="ongletInactif bis">
                                 <h1>CO2</h1><p><br><br>Dernière valeur : <?php echo $lastCO2; ?> ppm</p>
                             </div> 
+                        </div> <!--idem-->
+
+                        <div class="maj" data-anim="5">
+                        <input class="button" type="button" onclick="window.location.href='integration-AD 2.php';" value='actualiser' style='background:rgb(101, 137, 244); padding:15px;border-radius: 10px;
+                border: rgba(48, 48, 48, 0.5) solid 2px;
+                box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);margin:6% ;' />
                         </div> <!--idem-->
                 </div>
 

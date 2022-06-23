@@ -33,7 +33,8 @@ for($i=0, $size=count($data_tab); $i<$size; $i++)
 //La fonction substr recupere une partie d’une chaine de caracteres
 //La fonction sscanf permet de definir comment se decompose la trame
 
-$trame = $data_tab[2];
+// $trame = $data_tab[2];
+$trame = $data_tab[count($data_tab)-2];
 // decodage avec des substring
 $t = substr($trame,0,1);  // parameter (chain, starting point, length)
 $o = substr($trame,1,4); //
@@ -44,8 +45,11 @@ list($t, $o, $r, $c, $n, $v, $a, $x, $year, $month, $day, $hour, $min, $sec) = s
 echo("<br />$t,$o,$r,$c,$n,$v,$a,$x,$year,$month,$day,$hour,$min,$sec<br />");
 echo $v;
 
-$statement = $link->prepare("INSERT INTO capteur (type, valeur,idPatient) VALUES(?, ?, ?)");
+$statement = $link->prepare("UPDATE capteur SET type=?, valeur=? , idPatient=? ");
 $result =$statement->execute( [$n , $v , 19]);
+
+$statement1 = $link->prepare("INSERT INTO archives (type, valeur, idPatient) VALUES (?,?,?) ");
+$result1 =$statement1->execute( [$n , $v , 19]);
 
 //$url = 'projets-tomcat.isep.fr:8080/appService?ACTION=COMMAND&TEAM=0001&TRAME='.$trame;
 // Envoyer une requete 
@@ -53,4 +57,6 @@ $ch = curl_init();
 curl_setopt($ch,CURLOPT_URL, "http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=0001&TRAME=100012D02255511259920180525152052");
 $data = curl_exec($ch);
 curl_close($ch);
+
+header('Location: donnee_capteur.php');
 ?>
