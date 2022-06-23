@@ -12,19 +12,9 @@ if(!$_SESSION["loggedin"]){
 }
 
 $idUser = $_SESSION["idUser"];
+$idPatient = $_SESSION['idPatient'];
+$prénom = $_SESSION['prénomPatient'];
 
-$Requete = $link->prepare("SELECT * FROM patient WHERE idUser = ? ");
-$Requete->execute([$_SESSION['idUser']]);
-$resultat = $Requete->fetch();
-if(!$resultat){
-    echo"ca marche pas";
-
-}else{
-
-$idPatient=$resultat['idPatient'];
-$prénom = $resultat['prénom'];
-
-}
 
 $Requete = $link->prepare("SELECT * FROM capteur WHERE idPatient = ? ");
 $Requete->execute([$idPatient]);
